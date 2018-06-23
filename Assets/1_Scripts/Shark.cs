@@ -29,16 +29,20 @@ public class Shark : MonoBehaviour {
 
     private void ChangeColorState()
     {
-        //Animator anim = GetComponent<Animator>();
-        Animation anim = GetComponent<Animation>();
-        //AnimationClip anim = GetComponent<AnimationClip>();
-        Debug.Log("anim " + anim );
+        Animator animator = GetComponent<Animator>();
+
+        //Get the animator clip information from the Animator Controller
+        //AnimatorClipInfo[] m_AnimatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+
+        //Output the name of the starting clip
+        //Debug.Log("Starting clip : " + m_AnimatorClipInfo[0].clip);
+        //Debug.Log("animator " + animator); // shark
         
-        if (anim && anim.IsPlaying("Purple"))
+        if (animator /*&& anim.IsPlaying("Purple")*/)
         {
-            Debug.Log("Purple");
-            //anim.Stop();
-            //anim.Play("Yellow");
+            animator.Play("Yellow");
         }
+
+
     }
 }
