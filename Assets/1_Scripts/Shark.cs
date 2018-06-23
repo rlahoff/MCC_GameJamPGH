@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Shark : MonoBehaviour {
 
+    const int FRIENDLY_LAYER = 10;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -41,6 +43,7 @@ public class Shark : MonoBehaviour {
         if (animator /*&& anim.IsPlaying("Purple")*/)
         {
             animator.Play("Yellow");
+            gameObject.layer = FRIENDLY_LAYER;
         }
 
 
