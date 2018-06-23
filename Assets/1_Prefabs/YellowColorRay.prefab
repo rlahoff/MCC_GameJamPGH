@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114893215382935324}
   - component: {fileID: 50574840970487836}
   - component: {fileID: 58978477822041400}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: YellowColorRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
