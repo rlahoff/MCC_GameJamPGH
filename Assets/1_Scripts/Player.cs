@@ -73,6 +73,7 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Goal goal = collision.gameObject.GetComponent<Goal>();
+        //Debug.Log("OnTriggerEnter2D");
 
         if (collision.name == "Goal")
         //if (goal)

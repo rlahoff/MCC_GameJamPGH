@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class Shark : MonoBehaviour {
 
+    public int scoreValue = 100;
+    private Score score;
+
     const int FRIENDLY_LAYER = 10;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        score = GameObject.Find("ScoreUI").GetComponent<Score>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,6 +47,7 @@ public class Shark : MonoBehaviour {
         {
             animator.Play("Yellow");
             gameObject.layer = FRIENDLY_LAYER;
+            score.AddToScore(scoreValue);
         }
 
 
