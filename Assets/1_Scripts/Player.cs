@@ -69,4 +69,16 @@ public class Player : MonoBehaviour {
         //AudioSource.PlayClipAtPoint(fireSound, transform.position);
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Goal goal = collision.gameObject.GetComponent<Goal>();
+
+        if (collision.name == "Goal")
+        //if (goal)
+        {
+            LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+            levelManager.LoadLevel("Final");
+        }
+    }
 }
