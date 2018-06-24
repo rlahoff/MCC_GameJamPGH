@@ -90,8 +90,17 @@ public class Player : MonoBehaviour {
         if (collision.name == "Goal")
         //if (goal)
         {
-            LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-            levelManager.LoadNextLevel();
+            GameObject levelManagerGO = GameObject.Find("LevelManager");
+
+            if (levelManagerGO)
+            {
+                LevelManager levelManager = levelManagerGO.GetComponent<LevelManager>();
+                levelManager.LoadNextLevel();
+            }
+            else
+                Debug.LogWarning("Place a LevelManager prefab on this level");
+            
+                
         }
     }
 }
