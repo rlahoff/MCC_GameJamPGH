@@ -28,12 +28,24 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            facing = Facing.LEFT;
+            if (facing != Facing.LEFT)
+            {
+                facing = Facing.LEFT;
+                //bool flip = GetComponent<SpriteRenderer>().flipX;
+                GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+            }
+            
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            facing = Facing.RIGHT;
+            if (facing != Facing.RIGHT)
+            {
+                facing = Facing.RIGHT;
+                //bool flip = GetComponent<SpriteRenderer>().flipX;
+                GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+            }
+
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))

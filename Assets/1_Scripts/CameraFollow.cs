@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour {
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
         // Debug.Log(transform.position.x);
-        float xpos = player.transform.position.x + offset.x;
+        float xpos = player.transform.position.x + offset.x - 10;
         transform.position = new Vector3 (Mathf.Clamp(xpos, 0f, 1000f), transform.position.y, transform.position.z);
     }
 }
