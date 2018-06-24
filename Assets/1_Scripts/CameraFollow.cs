@@ -13,9 +13,10 @@ public class CameraFollow : MonoBehaviour {
     float xMinOffsetFromEdge = 20;  // TODO probably better to calculate this
     float xOffsetFromPlayer = 10;  // TODO probably better to calculate this
 
-    //float yMin;
-    //float yMax;
-    //float yMinOffset;
+    float yMin;
+    float yMax;
+    float yMinOffsetFromEdge = 10;  // TODO probably better to calculate this
+    float yOffsetFromPlayer = 10;  // TODO probably better to calculate this
 
     // Use this for initialization
     void Start()
@@ -27,7 +28,7 @@ public class CameraFollow : MonoBehaviour {
         GameObject levelBoundaryLowerLeft = GameObject.Find("LevelBoundaryLowerLeft");
         GameObject levelBoundaryUpperRight = GameObject.Find("LevelBoundaryUpperRight");
 
-        Debug.Log("Screen Width = " + Screen.width + "  Screen Width = " + Screen.height);
+        //Debug.Log("Screen Width = " + Screen.width + "  Screen Width = " + Screen.height);
 
         if (!levelBoundaryLowerLeft)
             Debug.LogWarning("Place a LevelBoundary named LevelBoundaryLowerLeft on this level");
@@ -41,8 +42,8 @@ public class CameraFollow : MonoBehaviour {
         xMax = levelBoundaryUpperRight.transform.position.x - xMinOffsetFromEdge;
 
         //Debug.Log(xMin + " " + xMax);
-        //yMin = levelBoundaryLowerLeft.transform.position.y + yMinOffset;
-        //yMax = levelBoundaryUpperRight.transform.position.y - yMinOffset;
+        yMin = levelBoundaryLowerLeft.transform.position.y + yMinOffsetFromEdge;
+        yMax = levelBoundaryUpperRight.transform.position.y - yMinOffsetFromEdge;
 
     }
 
@@ -54,7 +55,12 @@ public class CameraFollow : MonoBehaviour {
 
         // currently only following the player in x
         float xpos = player.transform.position.x + offset.x - xOffsetFromPlayer;
-        transform.position = new Vector3(Mathf.Clamp(xpos, xMin, xMax), transform.position.y, transform.position.z);
+        float ypos = player.transform.position.y + offset.y - yOffsetFromPlayer;
+
+        xpos = Mathf.Clamp(xpos, xMin, xMax);
+        ypos = Mathf.Clamp(ypos, yMin, yMax);
+
+        transform.position = new Vector3(xpos, ypos, transform.position.z);
 
     }
 }

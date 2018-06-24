@@ -10,15 +10,24 @@ public class Shark : MonoBehaviour {
 
     const int FRIENDLY_LAYER = 10;
 
-	// Use this for initialization
-	void Start () {
-        score = GameObject.Find("ScoreUI").GetComponent<Score>();
+    // Use this for initialization
+    void Start () {
+        GameObject scoreGO = GameObject.Find("ScoreUI");
+        if (!scoreGO)
+        {
+            Debug.LogWarning("Create a Canvas (if not present).  Place a ScoreUI in it on this level");
+        }
+        else
+            score = scoreGO.GetComponent<Score>();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     public void HitByPowerRay(string color)
     {
             ChangeColorState();
