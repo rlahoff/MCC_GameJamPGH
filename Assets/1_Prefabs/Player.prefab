@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yellowColorRayr: {fileID: 1173960877557294, guid: 8038eeab1b9062e4fafcd344563a802b,
     type: 2}
-  speed: 10
+  speed: 15
   rayFiringRate: 0.5
 --- !u!212 &212626474397556496
 SpriteRenderer:
