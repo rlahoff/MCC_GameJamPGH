@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
         //if (goal)
         {
             LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-            levelManager.LoadLevel("Final");
+            levelManager.LoadNextLevel();
         }
     }
 }
