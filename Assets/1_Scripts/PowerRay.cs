@@ -16,6 +16,17 @@ public class PowerRay : MonoBehaviour {
 		
 	}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // If I collided with a shark I will let the shark handle it,
+        // for all others I will destroy myself
+        Shark shark = collision.gameObject.GetComponent<Shark>();
+        if (shark)
+            shark.HitByPowerRay("Yellow");
+        
+        Hit();
+    }
+
     public void Hit()
     {
         Object.Destroy(gameObject);

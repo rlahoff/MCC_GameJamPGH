@@ -5,17 +5,26 @@ using UnityEngine;
 
 public class Shark : MonoBehaviour {
 
+    public int scoreValue = 100;
+    private Score score;
+
+    const int FRIENDLY_LAYER = 10;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        score = GameObject.Find("ScoreUI").GetComponent<Score>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    public void HitByPowerRay(string color)
+    {
+            ChangeColorState();
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+ /*   private void OnOnTriggerEnter2D(Collider2D collision)
     {
 
         PowerRay powerRay = collision.gameObject.GetComponent<PowerRay>();
@@ -25,7 +34,7 @@ public class Shark : MonoBehaviour {
             ChangeColorState();
             powerRay.Hit();
         }
-    }
+    }*/
 
     private void ChangeColorState()
     {
@@ -41,6 +50,8 @@ public class Shark : MonoBehaviour {
         if (animator /*&& anim.IsPlaying("Purple")*/)
         {
             animator.Play("Yellow");
+            gameObject.layer = FRIENDLY_LAYER;
+            score.AddToScore(scoreValue);
         }
 
 
