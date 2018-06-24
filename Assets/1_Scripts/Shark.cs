@@ -19,8 +19,12 @@ public class Shark : MonoBehaviour {
 	void Update () {
 		
 	}
+    public void HitByPowerRay(string color)
+    {
+            ChangeColorState();
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+ /*   private void OnOnTriggerEnter2D(Collider2D collision)
     {
 
         PowerRay powerRay = collision.gameObject.GetComponent<PowerRay>();
@@ -30,7 +34,7 @@ public class Shark : MonoBehaviour {
             ChangeColorState();
             powerRay.Hit();
         }
-    }
+    }*/
 
     private void ChangeColorState()
     {
