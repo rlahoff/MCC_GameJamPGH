@@ -12,7 +12,9 @@ public class Score : MonoBehaviour {
     void Start()
     {
         myText = GetComponent<Text>();
-        Reset();
+        // just want to set the text if at the beginning of the game
+        if (score == 0)
+            Reset();
     }
 
     // Update is called once per frame
@@ -23,6 +25,8 @@ public class Score : MonoBehaviour {
 
     public static void Reset()
     {
+        Debug.Log("ScoreReset");
+
         score = 0;
         if (myText) myText.text = score.ToString();
     }

@@ -12,7 +12,7 @@ public class DisplayScore : MonoBehaviour
     {
         Text text = GetComponent<Text>();
         if (text) text.text = Score.score.ToString();
-        Score.Reset();
+        //Score.Reset();
     }
 
     // Update is called once per frame
