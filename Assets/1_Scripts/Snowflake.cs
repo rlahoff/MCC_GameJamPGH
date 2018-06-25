@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum COLOR { Yellow, Green };
+public enum COLOR { Yellow, Green, COLOR_COUNT };
 
 public class Snowflake : MonoBehaviour {
 
