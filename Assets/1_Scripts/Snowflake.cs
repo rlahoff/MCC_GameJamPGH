@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum COLOR { Yellow, Green };
+
 public class Snowflake : MonoBehaviour {
 
-    public enum COLOR { Yellow, Green };
+    //public enum COLOR { Yellow, Green };
     
     [SerializeField] COLOR my_Color;
 
@@ -17,4 +19,9 @@ public class Snowflake : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public COLOR Color()
+    {
+        return my_Color;
+    }
 }

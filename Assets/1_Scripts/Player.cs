@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    //[SerializeField] Snowflake.COLOR my_Color = Snowflake.COLOR.Yellow;
+    [SerializeField] COLOR my_Color = COLOR.Yellow;
+
     public GameObject colorRay;
 
     public float speed = 8;
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour {
 
     private void FireColorRay()
     {
-        //Debug.Log("FireLaser");
+        // stupid unity somehow links a script to just one object, so I can't use it for multiple
         GameObject beam = Instantiate(colorRay, transform.position, Quaternion.identity) as GameObject;
         float speed = beam.gameObject.GetComponent<ColorRay>().GetSpeed();
 
@@ -87,20 +90,37 @@ public class Player : MonoBehaviour {
         //Goal goal = collision.gameObject.GetComponent<Goal>();
         //Debug.Log("OnTriggerEnter2D");
 
-        if (collision.name == "Goal")
-        //if (goal)
-        {
-            GameObject levelManagerGO = GameObject.Find("LevelManager");
+        Debug.Log(collision.name);
 
-            if (levelManagerGO)
-            {
-                LevelManager levelManager = levelManagerGO.GetComponent<LevelManager>();
-                levelManager.LoadNextLevel();
-            }
-            else
-                Debug.LogWarning("Place a LevelManager prefab on this level");
-            
-                
+        if (collision.name == "Goal")
+        {
+            TriggerGoal();
         }
+        else if (collision.name.Contains("Snowflake"))
+        {
+            Snowflake snowflake = collision.gameObject.GetComponent<Snowflake>();
+            TriggerSnowflake(snowflake.Color());
+        }
+    }
+
+    private void TriggerSnowflake(COLOR color)
+    {
+        if (my_Color == color) return;
+
+        my_Color = color;
+
+    }
+
+    private void TriggerGoal()
+    {
+        GameObject levelManagerGO = GameObject.Find("LevelManager");
+
+        if (levelManagerGO)
+        {
+            LevelManager levelManager = levelManagerGO.GetComponent<LevelManager>();
+            levelManager.LoadNextLevel();
+        }
+        else
+            Debug.LogWarning("Place a LevelManager prefab on this level");
     }
 }
