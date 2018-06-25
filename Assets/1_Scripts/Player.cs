@@ -72,7 +72,7 @@ public class Player : MonoBehaviour {
 
     private void FireColorRay()
     {
-        //Debug.Log("FireLaser");
+        // stupid unity somehow links a script to just one object, so I can't use it for multiple
         GameObject beam = Instantiate(colorRay, transform.position, Quaternion.identity) as GameObject;
         float speed = beam.gameObject.GetComponent<ColorRay>().GetSpeed();
 
@@ -106,6 +106,8 @@ public class Player : MonoBehaviour {
     private void TriggerSnowflake(COLOR color)
     {
         if (my_Color == color) return;
+
+        my_Color = color;
 
     }
 

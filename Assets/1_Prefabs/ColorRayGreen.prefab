@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212041718370366038}
   - component: {fileID: 58517107154049058}
   - component: {fileID: 50229870633017298}
-  - component: {fileID: 114498666452806622}
-  m_Layer: 0
+  - component: {fileID: 114141833818561608}
+  m_Layer: 11
   m_Name: ColorRayGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.9103758
---- !u!114 &114498666452806622
+--- !u!114 &114141833818561608
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
