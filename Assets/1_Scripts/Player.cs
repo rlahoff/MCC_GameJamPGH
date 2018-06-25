@@ -77,6 +77,7 @@ public class Player : MonoBehaviour {
         beam = Instantiate(colorRayPrefabs[(int)my_Color], transform.position, Quaternion.identity) as GameObject;
 
         float speed = beam.gameObject.GetComponent<ColorRay>().GetSpeed();
+        beam.gameObject.GetComponent<ColorRay>().SetColor(my_Color);
 
         if (facing == Facing.RIGHT)
             beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);

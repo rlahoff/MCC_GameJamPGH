@@ -10,6 +10,8 @@ public class Shark : MonoBehaviour {
 
     const int FRIENDLY_LAYER = 10;
 
+    [SerializeField] COMP_COLOR my_comp_color;
+
     // Use this for initialization
     void Start () {
         GameObject scoreGO = GameObject.Find("ScoreUI");
@@ -28,8 +30,9 @@ public class Shark : MonoBehaviour {
 
     }
 
-    public void HitByColorRay(string color)
+    public void HitByColorRay(COLOR color)
     {
+        if (Snowflake.IsColorComplementary(color, my_comp_color))
             ChangeColorState();
     }
 

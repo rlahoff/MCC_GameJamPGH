@@ -6,6 +6,8 @@ public class ColorRay : MonoBehaviour {
 
     [SerializeField] float speed = 15f;
 
+    private COLOR my_color;
+
     // Use this for initialization
     void Start()
     {
@@ -18,13 +20,19 @@ public class ColorRay : MonoBehaviour {
 
     }
 
+    public void SetColor(COLOR color)
+    {
+        my_color = color;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // If I collided with a shark I will let the shark handle it,
         // for all others I will destroy myself
         Shark shark = collision.gameObject.GetComponent<Shark>();
+
         if (shark)
-            shark.HitByColorRay("Yellow");
+            shark.HitByColorRay(my_color);
 
         Hit();
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum COLOR { Yellow, Green, COLOR_COUNT };
+public enum COMP_COLOR { Purple, Red, COLOR_COUNT };
 
 public class Snowflake : MonoBehaviour {
 
@@ -19,6 +20,15 @@ public class Snowflake : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    static public bool IsColorComplementary(COLOR color, COMP_COLOR comp_color)
+    {
+        if ((int)color == (int)comp_color)
+            return true;
+        else
+            return false;
+    }
+
 
     public COLOR Color()
     {
