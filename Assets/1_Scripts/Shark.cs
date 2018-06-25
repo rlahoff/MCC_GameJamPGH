@@ -61,7 +61,16 @@ public class Shark : MonoBehaviour {
         
         if (animator /*&& anim.IsPlaying("Purple")*/)
         {
-            animator.Play("Yellow");
+            switch(my_comp_color)
+            {
+                case COMP_COLOR.Purple:
+                    animator.Play("Yellow");
+                    break;
+
+                case COMP_COLOR.Red:
+                    animator.SetTrigger("Friendly");
+                    break;
+            }
             gameObject.layer = FRIENDLY_LAYER;
             score.AddToScore(scoreValue);
         }
