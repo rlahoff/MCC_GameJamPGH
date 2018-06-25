@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public GameObject yellowColorRayr;
+    public GameObject colorRay;
 
     public float speed = 8;
     public float rayFiringRate = 0.2f;
@@ -59,19 +59,19 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            InvokeRepeating("FirePowerRay", 0.000001f, rayFiringRate);
+            InvokeRepeating("FireColorRay", 0.000001f, rayFiringRate);
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            CancelInvoke("FirePowerRay");
+            CancelInvoke("FireColorRay");
         }
     }
 
-    private void FirePowerRay()
+    private void FireColorRay()
     {
         //Debug.Log("FireLaser");
-        GameObject beam = Instantiate(yellowColorRayr, transform.position, Quaternion.identity) as GameObject;
-        float speed = beam.gameObject.GetComponent<PowerRay>().GetSpeed();
+        GameObject beam = Instantiate(colorRay, transform.position, Quaternion.identity) as GameObject;
+        float speed = beam.gameObject.GetComponent<ColorRay>().GetSpeed();
 
         if (facing == Facing.RIGHT)
             beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);

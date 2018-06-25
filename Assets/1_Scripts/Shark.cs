@@ -28,7 +28,7 @@ public class Shark : MonoBehaviour {
 
     }
 
-    public void HitByPowerRay(string color)
+    public void HitByColorRay(string color)
     {
             ChangeColorState();
     }

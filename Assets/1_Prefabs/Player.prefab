@@ -118,8 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5c20c9459de2c46bb53dd373b71c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yellowColorRayr: {fileID: 1173960877557294, guid: 8038eeab1b9062e4fafcd344563a802b,
-    type: 2}
+  colorRay: {fileID: 1145285282564916, guid: 083b1c0acf208e943a4036617437acc2, type: 2}
   speed: 15
   rayFiringRate: 0.5
 --- !u!212 &212626474397556496

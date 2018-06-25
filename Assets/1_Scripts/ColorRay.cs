@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerRay : MonoBehaviour {
+public class ColorRay : MonoBehaviour {
 
-    [SerializeField] float speed = 10f;
+    [SerializeField] float speed = 15f;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,8 +24,8 @@ public class PowerRay : MonoBehaviour {
         // for all others I will destroy myself
         Shark shark = collision.gameObject.GetComponent<Shark>();
         if (shark)
-            shark.HitByPowerRay("Yellow");
-        
+            shark.HitByColorRay("Yellow");
+
         Hit();
     }
 
