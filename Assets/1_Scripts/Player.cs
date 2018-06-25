@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
     //[SerializeField] Snowflake.COLOR my_Color = Snowflake.COLOR.Yellow;
     [SerializeField] COLOR my_Color = COLOR.Yellow;
 
-    public GameObject colorRay;
+    public GameObject[] colorRayPrefabs;
 
     public float speed = 8;
     public float rayFiringRate = 0.2f;
@@ -72,9 +72,12 @@ public class Player : MonoBehaviour {
 
     private void FireColorRay()
     {
-        // stupid unity somehow links a script to just one object, so I can't use it for multiple
-        GameObject beam = Instantiate(colorRay, transform.position, Quaternion.identity) as GameObject;
+        GameObject beam;
+
+        beam = Instantiate(colorRayPrefabs[(int)my_Color], transform.position, Quaternion.identity) as GameObject;
+
         float speed = beam.gameObject.GetComponent<ColorRay>().GetSpeed();
+        beam.gameObject.GetComponent<ColorRay>().SetColor(my_Color);
 
         if (facing == Facing.RIGHT)
             beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
