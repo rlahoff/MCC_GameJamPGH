@@ -25,7 +25,7 @@ public class Score : MonoBehaviour {
 
     public static void Reset()
     {
-        Debug.Log("ScoreReset");
+        //Debug.Log("ScoreReset");
 
         score = 0;
         if (myText) myText.text = score.ToString();

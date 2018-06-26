@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum COLOR { Yellow, Green, COLOR_COUNT };
-public enum COMP_COLOR { Purple, Red, COLOR_COUNT };
+public enum COLOR { Yellow, Green, Blue, COLOR_COUNT };
+public enum COMP_COLOR { Purple, Red, Orange, COLOR_COUNT };
 
 public class Snowflake : MonoBehaviour {
 
-    //public enum COLOR { Yellow, Green };
-    
     [SerializeField] COLOR my_Color;
 
 	// Use this for initialization
