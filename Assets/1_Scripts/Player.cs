@@ -90,10 +90,7 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Goal goal = collision.gameObject.GetComponent<Goal>();
-        //Debug.Log("OnTriggerEnter2D");
-
-        Debug.Log(collision.name);
+        //Debug.Log(collision.name);
 
         if (collision.name == "Goal")
         {
@@ -120,6 +117,12 @@ public class Player : MonoBehaviour {
                 break;
             case COLOR.Green:
                 animator.SetTrigger("GreenSwim");
+                break;
+            case COLOR.Blue:
+                animator.SetTrigger("BlueSwim");
+                break;
+            default:
+                Debug.LogWarning("Missing Penguin animation state or handling " + my_Color + "in this swtich statement");
                 break;
         }
 
