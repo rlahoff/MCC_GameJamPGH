@@ -111,6 +111,19 @@ public class Player : MonoBehaviour {
         if (my_Color == color) return;
 
         my_Color = color;
+        Animator animator = GetComponent<Animator>();
+
+        switch (my_Color)
+        {
+            case COLOR.Yellow:
+                animator.SetTrigger("YellowSwim");
+                break;
+            case COLOR.Green:
+                animator.SetTrigger("GreenSwim");
+                break;
+        }
+
+        
 
     }
 
