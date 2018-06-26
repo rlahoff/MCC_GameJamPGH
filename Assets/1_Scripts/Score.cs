@@ -15,12 +15,18 @@ public class Score : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        maxScaleX = transform.localScale.x;
-        
+        //maxScaleX = transform.localScale.x;
+        maxScaleX = GetComponent<RectTransform>().transform.localScale.x;
         currentSharkCount = 0;
 
+        GameObject sharksGO = GameObject.Find("Sharks");
 
-        maxSharkCount = 5;
+        if (!sharksGO)
+        {
+            Debug.LogWarning("Create an Empty Gameobject and name it Sharks.  Put all sharks in it. ");
+        }
+        else
+            maxSharkCount = sharksGO.transform.childCount;
 
         UpdateProgressBar();
     }
@@ -56,7 +62,12 @@ public class Score : MonoBehaviour {
         if (maxSharkCount > 0)
         {
             RectTransform rectTrans = GetComponent<RectTransform>();
-            rectTrans.transform.localScale = new Vector3((currentSharkCount / maxSharkCount) * maxScaleX, rectTrans.transform.localScale.y);
+//           Debug.Log("before: " + rectTrans.transform.localScale);
+
+            // divide by 100 is it a percentage?
+            float newx = ((float)currentSharkCount / (float)maxSharkCount) * maxScaleX / 100f;
+            rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
+//            Debug.Log("after: " + rectTrans.transform.localScale);
         }
         else
             Debug.LogError("maxSharkCount <= 0");  
