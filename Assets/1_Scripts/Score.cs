@@ -5,16 +5,24 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    public static int score = 0;
-    static Text myText;
+    //public static int score = 0;
+    static int gameScore = 0;
+    int currentSharkCount;
+    int maxSharkCount;
+
+    public float maxScaleX;
 
     // Use this for initialization
     void Start()
     {
-        myText = GetComponent<Text>();
-        // just want to set the text if at the beginning of the game
-        if (score == 0)
-            Reset();
+        maxScaleX = transform.localScale.x;
+        
+        currentSharkCount = 0;
+
+
+        maxSharkCount = 5;
+
+        UpdateProgressBar();
     }
 
     // Update is called once per frame
@@ -27,13 +35,30 @@ public class Score : MonoBehaviour {
     {
         //Debug.Log("ScoreReset");
 
-        score = 0;
-        if (myText) myText.text = score.ToString();
+        gameScore = 0;
+    }
+
+    public static int GetGameScore()
+    {
+        return gameScore;
     }
 
     public void AddToScore(int points)
     {
-        score += points;
-        myText.text = score.ToString();
+        gameScore += points;
+        currentSharkCount += points;
+        UpdateProgressBar();
+  
     }
+
+    private void UpdateProgressBar()
+    {
+        if (maxSharkCount > 0)
+        {
+            RectTransform rectTrans = GetComponent<RectTransform>();
+            rectTrans.transform.localScale = new Vector3((currentSharkCount / maxSharkCount) * maxScaleX, rectTrans.transform.localScale.y);
+        }
+        else
+            Debug.LogError("maxSharkCount <= 0");  
+     }
 }

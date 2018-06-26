@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224541565826166870}
   - component: {fileID: 222509250743380384}
   - component: {fileID: 114557491889155830}
+  - component: {fileID: 114035641273500422}
   m_Layer: 5
   m_Name: Shark Progress
   m_TagString: Untagged
@@ -28,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114035641273500422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637532644399322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e36ddfacf00e90449f444f7d965bb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScaleX: 0
 --- !u!114 &114557491889155830
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Shark : MonoBehaviour {
 
-    public int scoreValue = 100;
+    public int scoreValue = 1;
     private Score score;
 
     const int FRIENDLY_LAYER = 10;
@@ -14,10 +14,11 @@ public class Shark : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameObject scoreGO = GameObject.Find("ScoreUI");
+        GameObject scoreGO = GameObject.Find("Shark Progress");
+
         if (!scoreGO)
         {
-            Debug.LogWarning("Create a Canvas (if not present).  Place a ScoreUI in it on this level");
+            Debug.LogWarning("Create a Canvas (if not present).  Place a Shark Progress in it on this level");
         }
         else
             score = scoreGO.GetComponent<Score>();

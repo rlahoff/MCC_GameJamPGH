@@ -11,7 +11,7 @@ public class DisplayScore : MonoBehaviour
     void Start()
     {
         Text text = GetComponent<Text>();
-        if (text) text.text = Score.score.ToString();
+        if (text) text.text = Score.GetGameScore().ToString();
         //Score.Reset();
     }
 
