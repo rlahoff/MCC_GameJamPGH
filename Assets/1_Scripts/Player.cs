@@ -118,8 +118,11 @@ public class Player : MonoBehaviour {
             case COLOR.Green:
                 animator.SetTrigger("GreenSwim");
                 break;
+            case COLOR.Blue:
+                animator.SetTrigger("BlueSwim");
+                break;
             default:
-                Debug.LogWarning("Missing Penguing animation state " + my_Color);
+                Debug.LogWarning("Missing Penguin animation state or handling " + my_Color + "in this swtich statement");
                 break;
         }
 
