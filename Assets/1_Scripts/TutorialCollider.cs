@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TutorialCollider : MonoBehaviour {
 
+    bool passed = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,8 +20,9 @@ public class TutorialCollider : MonoBehaviour {
     {
         Player player = collision.gameObject.GetComponent<Player>();
 
-        if ( player )
+        if ( player && !passed )
         {
+            passed = true;
             GameObject tutorialText = GameObject.Find("Tutorial Text");
             tutorialText.GetComponent< TutorialText>().NextText();
 

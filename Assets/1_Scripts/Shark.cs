@@ -12,6 +12,8 @@ public class Shark : MonoBehaviour {
 
     [SerializeField] COMP_COLOR my_comp_color;
 
+    static bool firstColorChange = false;
+
     // Use this for initialization
     void Start () {
         GameObject scoreGO = GameObject.Find("Shark Progress");
@@ -53,13 +55,17 @@ public class Shark : MonoBehaviour {
     {
         Animator animator = GetComponent<Animator>();
 
-        //Get the animator clip information from the Animator Controller
-        //AnimatorClipInfo[] m_AnimatorClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        if (!firstColorChange)
+        {
+            GameObject tutorial = GameObject.Find("TutorialCollider");
+            if (tutorial)
+            {
+                GameObject tutorialText = GameObject.Find("Tutorial Text");
+                tutorialText.GetComponent<TutorialText>().NextText();
+            }
+            firstColorChange = true;
+        }
 
-        //Output the name of the starting clip
-        //Debug.Log("Starting clip : " + m_AnimatorClipInfo[0].clip);
-        //Debug.Log("animator " + animator); // shark
-        
         if (animator /*&& anim.IsPlaying("Purple")*/)
         {
             switch(my_comp_color)

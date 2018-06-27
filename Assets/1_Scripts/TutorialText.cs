@@ -22,6 +22,11 @@ public class TutorialText : MonoBehaviour {
 		
 	}
 
+    public TUTORIAL_STATE GetTutorialState()
+    {
+        return (TUTORIAL_STATE)(count - 1);
+    }
+
     public void NextText()
     {
         GetComponent<Text>().text = instructions[count];

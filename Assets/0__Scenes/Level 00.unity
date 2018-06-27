@@ -1398,7 +1398,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2396,11 +2396,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4102487629973190, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 34.36
+      value: 25.84
       objectReference: {fileID: 0}
     - target: {fileID: 4102487629973190, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -13.38
+      value: -5.03
       objectReference: {fileID: 0}
     - target: {fileID: 4102487629973190, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2429,6 +2429,18 @@ Prefab:
     - target: {fileID: 1134707691814986, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
       propertyPath: m_Name
       value: TutorialCollider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102487629973190, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 7.4019403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102487629973190, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 7.401936
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102487629973190, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 7.401936
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28073720440a9f24689b1bd6c43ce8bb, type: 2}

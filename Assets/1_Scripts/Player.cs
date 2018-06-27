@@ -27,6 +27,8 @@ public class Player : MonoBehaviour {
     static float playingTimeElapsed = 0;
     static int totalSharks = 0;
 
+    // for tutorial
+    bool firstFireColorRay = false;
     // Use this for initialization
     void Start()
     {
@@ -251,6 +253,23 @@ public class Player : MonoBehaviour {
 
     private void FireColorRay()
     {
+        // for tutorial state
+        if (!firstFireColorRay)
+        {
+            GameObject tutorial = GameObject.Find("TutorialCollider");
+            if (tutorial)
+            {
+                GameObject tutorialText = GameObject.Find("Tutorial Text");
+                if (tutorialText.GetComponent<TutorialText>().GetTutorialState() == TUTORIAL_STATE.SPACEBAR)
+                {
+                    firstFireColorRay = true;
+                }
+                else
+                    return; // you can't fire yet
+            }
+            else
+                firstFireColorRay = true;
+        }
         // on my computer if i'm holding UP and LEFT at the same time then SPACEBAR doesn't work
         // but I'm fine using WA or the numberkey pad with numlock off
 
