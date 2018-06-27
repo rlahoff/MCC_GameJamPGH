@@ -45,7 +45,7 @@ public class Player : MonoBehaviour {
 
             case STATE.FINAL_SCREEN:
         
-                if (sceneName != "TestTransition")
+                if (sceneName != "Final")
                 {
                     Debug.LogError("Player my_state set to FINAL_SCREEN.  Change to LEVEL_PLAY in inspector.");
                     my_state = STATE.LEVEL_PLAY;
