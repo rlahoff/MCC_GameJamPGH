@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50878613434888478}
   - component: {fileID: 58233215160789536}
   - component: {fileID: 114343430067259088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shark_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
