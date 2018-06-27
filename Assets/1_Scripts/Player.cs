@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
     //[SerializeField] Snowflake.COLOR my_Color = Snowflake.COLOR.Yellow;
     [SerializeField] COLOR my_Color = COLOR.Yellow;
 
-    public GameObject[] colorRayPrefabs;
+    public GameObject[] colorRayPrefabs;    // set these in the inspector
 
     public float speed = 8;
     public float rayFiringRate = 0.2f;
