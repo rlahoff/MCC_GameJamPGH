@@ -62,7 +62,8 @@ public class Player : MonoBehaviour {
 
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
         }
