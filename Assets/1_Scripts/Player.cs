@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -16,18 +17,28 @@ public class Player : MonoBehaviour {
     enum Facing { LEFT, RIGHT };
     private Facing facing = Facing.RIGHT;
 
-    
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        ProcessInput();
-	}
+    static float playingTimeElapsed = 0;
 
-    private void ProcessInput()
+    // Use this for initialization
+    void Start()
+    {
+        //Check if the current Active Scene's name is your first Scene
+        if (SceneManager.GetActiveScene().name == "Level 01")
+            playingTimeElapsed = 0;
+    }
+
+        // Update is called once per frame
+        void Update()
+        {
+            ProcessInput();
+        }
+
+        void FixedUpdate()
+        {
+            playingTimeElapsed += Time.fixedDeltaTime;
+        }
+
+        private void ProcessInput()
     {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
