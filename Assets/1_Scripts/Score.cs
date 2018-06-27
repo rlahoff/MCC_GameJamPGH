@@ -18,6 +18,14 @@ public class Score : MonoBehaviour {
         //maxScaleX = transform.localScale.x;
         maxScaleX = GetComponent<RectTransform>().transform.localScale.x;
         currentSharkCount = 0;
+        maxSharkCount = SharksOnThisLevel();
+
+        UpdateProgressBar();
+    }
+
+    public static int SharksOnThisLevel()
+    {
+        int sharkCount = 0;
 
         GameObject sharksGO = GameObject.Find("Sharks");
 
@@ -26,9 +34,9 @@ public class Score : MonoBehaviour {
             Debug.LogWarning("Create an Empty Gameobject and name it Sharks.  Put all sharks in it. ");
         }
         else
-            maxSharkCount = sharksGO.transform.childCount;
+            sharkCount = sharksGO.transform.childCount;
 
-        UpdateProgressBar();
+        return sharkCount;
     }
 
     // Update is called once per frame

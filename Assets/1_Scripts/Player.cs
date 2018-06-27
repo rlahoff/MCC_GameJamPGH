@@ -2,12 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
     //[SerializeField] Snowflake.COLOR my_Color = Snowflake.COLOR.Yellow;
-    [SerializeField] COLOR my_Color = COLOR.Yellow;
+    COLOR my_Color = COLOR.Yellow;
+
+    enum STATE { LEVEL_PLAY, FINAL_SCREEN };
+    [SerializeField] STATE my_state = STATE.LEVEL_PLAY;
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
 
@@ -18,27 +22,76 @@ public class Player : MonoBehaviour {
     private Facing facing = Facing.RIGHT;
 
     static float playingTimeElapsed = 0;
+    static int totalSharks = 0;
 
     // Use this for initialization
     void Start()
     {
         //Check if the current Active Scene's name is your first Scene
-        if (SceneManager.GetActiveScene().name == "Level 01")
+        String sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Level 01")
+        {
             playingTimeElapsed = 0;
+            totalSharks = 0;
+        }
+
+
+        switch (my_state)
+        {
+            case STATE.LEVEL_PLAY:
+                totalSharks += Score.SharksOnThisLevel();
+                break;
+
+            case STATE.FINAL_SCREEN:
+        
+                if (sceneName != "TestTransition")
+                {
+                    Debug.LogError("Player my_state set to FINAL_SCREEN.  Change to LEVEL_PLAY in inspector.");
+                    my_state = STATE.LEVEL_PLAY;
+                }
+                else
+                {
+                    StartForFinalScene();
+                }
+                break;
+        }
     }
 
-        // Update is called once per frame
-        void Update()
-        {
-            ProcessInput();
-        }
+    private void StartForFinalScene()
+    {
+        GameObject shark = GameObject.Find("Shark_Yellow");
+        shark.GetComponent<Animator>().Play("Yellow");
 
-        void FixedUpdate()
-        {
-            playingTimeElapsed += Time.fixedDeltaTime;
-        }
+        shark = GameObject.Find("Shark_Green");
+        shark.GetComponent<Animator>().SetTrigger("Friendly");
 
-        private void ProcessInput()
+        GameObject text = GameObject.Find("ScoreText");
+        text.GetComponent<Text>().text = "Score: " + Score.GetGameScore().ToString();
+
+        int missed = totalSharks - Score.GetGameScore();
+        text = GameObject.Find("MissedText");
+        text.GetComponent<Text>().text = "Missed: " + missed.ToString();
+
+        text = GameObject.Find("TimeText");
+        //playingTimeElapsed.ToString(
+        string str = string.Format("{0:0.00}", playingTimeElapsed);
+        text.GetComponent<Text>().text = "Time: " + str + " seconds";
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ProcessInput();
+    }
+
+    void FixedUpdate()
+    {
+        playingTimeElapsed += Time.fixedDeltaTime;
+    }
+
+    private void ProcessInput()
     {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
@@ -155,3 +208,5 @@ public class Player : MonoBehaviour {
             Debug.LogWarning("Place a LevelManager prefab on this level");
     }
 }
+
+

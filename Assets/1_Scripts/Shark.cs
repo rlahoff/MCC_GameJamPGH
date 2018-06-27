@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Shark : MonoBehaviour {
 
-    public int scoreValue = 1;
+    int scoreValue = 1;
     private Score score;
 
     const int FRIENDLY_LAYER = 10;

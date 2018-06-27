@@ -8,7 +8,13 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Scene scene = SceneManager.GetActiveScene();
+        int nextScene = scene.buildIndex + 1;
+
+        if (nextScene == SceneManager.sceneCount)
+            SceneManager.LoadScene(nextScene);
+        else
+            SceneManager.LoadScene("TestTransition");
     }
 
     public void LoadLevel(string name)
