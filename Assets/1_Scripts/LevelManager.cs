@@ -11,10 +11,10 @@ public class LevelManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         int nextScene = scene.buildIndex + 1;
 
-        if (nextScene == SceneManager.sceneCount)
+ //       if (nextScene < SceneManager.sceneCount)
             SceneManager.LoadScene(nextScene);
-        else
-            SceneManager.LoadScene("TestTransition");
+ //       else
+ //           SceneManager.LoadScene("TestTransition");
     }
 
     public void LoadLevel(string name)
