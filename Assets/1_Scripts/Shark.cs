@@ -71,6 +71,14 @@ public class Shark : MonoBehaviour {
                 case COMP_COLOR.Red:
                     animator.SetTrigger("Friendly");
                     break;
+
+                case COMP_COLOR.Orange:
+                    animator.SetTrigger("Friendly");
+                    break;
+
+                default:
+                    Debug.LogWarning("missing shark code");
+                    break;
             }
             gameObject.layer = FRIENDLY_LAYER;
             score.AddToScore(scoreValue);
