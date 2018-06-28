@@ -10,13 +10,16 @@ public class Score : MonoBehaviour {
     int currentSharkCount;
     int maxSharkCount;
 
-    public float maxScaleX;
+    float maxScaleX;
+    Vector3 originalPosition;
 
     // Use this for initialization
     void Start()
     {
         //maxScaleX = transform.localScale.x;
         maxScaleX = GetComponent<RectTransform>().transform.localScale.x;
+        originalPosition = GetComponent<RectTransform>().transform.position;
+
         currentSharkCount = 0;
         maxSharkCount = SharksOnThisLevel();
 
@@ -67,15 +70,24 @@ public class Score : MonoBehaviour {
 
     private void UpdateProgressBar()
     {
+        // keep the pivot of the progress bar the same as the outline or there will be trouble!
         if (maxSharkCount > 0)
         {
             RectTransform rectTrans = GetComponent<RectTransform>();
-//           Debug.Log("before: " + rectTrans.transform.localScale);
+            Debug.Log("position: " + rectTrans.transform.position);
+            Debug.Log("original: " + originalPosition);
+            Debug.Log("width   : " + rectTrans.rect.width);
 
-            // divide by 100 is it a percentage?
-            float newx = ((float)currentSharkCount / (float)maxSharkCount) * maxScaleX / 100f;
+
+            //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);
+            float newx = (maxScaleX * (float)currentSharkCount / (float)maxSharkCount);
+            //Debug.Log("UpdateProgressBar" + " " + maxScaleX + " " + currentSharkCount + " = " + newx);
+            
+            //Debug.Log("before: " + rectTrans.transform.localScale);
             rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
-//            Debug.Log("after: " + rectTrans.transform.localScale);
+
+            float shiftx;
+            //Debug.Log("after: " + rectTrans.transform.localScale);
         }
         else
             Debug.LogError("maxSharkCount <= 0");  
