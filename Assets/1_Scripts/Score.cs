@@ -74,9 +74,10 @@ public class Score : MonoBehaviour {
         if (maxSharkCount > 0)
         {
             RectTransform rectTrans = GetComponent<RectTransform>();
-            Debug.Log("position: " + rectTrans.transform.position);
-            Debug.Log("original: " + originalPosition);
+            //Debug.Log("position: " + rectTrans.transform.position);
+            //Debug.Log("original: " + originalPosition);
             Debug.Log("width   : " + rectTrans.rect.width);
+            Debug.Log("maxSharkCount   : " + maxSharkCount);
 
 
             //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);
@@ -86,7 +87,8 @@ public class Score : MonoBehaviour {
             //Debug.Log("before: " + rectTrans.transform.localScale);
             rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
 
-            float shiftx = rectTrans.rect.width * (float)currentSharkCount / (float)maxSharkCount;
+            float shiftx = rectTrans.rect.width * (1f - (float)currentSharkCount / (float)maxSharkCount);
+            Debug.Log("shiftx = " + shiftx);
             //Debug.Log("after: " + rectTrans.transform.localScale);
             RectTransform rectT = GetComponent<RectTransform>();
             rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
