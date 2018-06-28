@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    string[] levelNames = { "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night", "Icebergs", "Sharkfest" };
+    string[] levelNames = { "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
+        "Icebergs", "Sharkfest", "", "", "" };
 
     void Start()
     {
@@ -47,9 +48,29 @@ public class LevelManager : MonoBehaviour
         return levelNames[SceneManager.GetActiveScene().buildIndex];
     }
 
-    public void QuitRequest()
+    public void QuitButtonCall()
+    {
+        GameObject dialog = GameObject.Find("QuitDialogParent");
+        if (dialog)
+        {
+            dialog.transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
+
+    public void QuitButtonCancel()
+    {
+        GameObject dialog = GameObject.Find("QuitDialogParent");
+        if (dialog)
+        {
+ //           Debug.Log("setactive");
+            dialog.transform.GetChild(0).gameObject.SetActive(false);
+        }
+    }
+
+ /*   public void QuitRequest()
     {
         //Debug.Log("Quit requested");
         Application.Quit();
     }
+    */
 }
