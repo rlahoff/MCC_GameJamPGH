@@ -365,7 +365,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 42.4}
-  m_SizeDelta: {x: 150, y: 45}
+  m_SizeDelta: {x: 250, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481533923
 MonoBehaviour:
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 1788265072}
   - component: {fileID: 1788265071}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Play Again Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

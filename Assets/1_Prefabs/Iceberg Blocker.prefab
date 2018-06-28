@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4792927531086756}
   - component: {fileID: 212149137228853078}
   - component: {fileID: 58509228398029300}
-  m_Layer: 1
+  m_Layer: 12
   m_Name: Iceberg Blocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
