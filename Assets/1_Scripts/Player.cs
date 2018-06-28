@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     [SerializeField] STATE my_state = STATE.LEVEL_PLAY;
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
+    public AudioClip fireSound;             // andrea
 
     public float speed = 8;
     public float rayFiringRate = 0.2f;
@@ -286,13 +287,7 @@ public class Player : MonoBehaviour {
         Vector3 facingVector = FacingVector(my_facing);
         beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * facingVector.x, speed * facingVector.y);
 
-        //       if (facing == Facing.RIGHT)
-        //beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
- //       else
- //           beam.GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, 0);
-
-        //AudioSource.PlayClipAtPoint(fireSound, transform.position);
-
+        AudioSource.PlayClipAtPoint(fireSound, transform.position); // andrea
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

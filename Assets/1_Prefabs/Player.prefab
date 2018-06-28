@@ -118,11 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5c20c9459de2c46bb53dd373b71c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_Color: 0
+  my_state: 0
   colorRayPrefabs:
   - {fileID: 1145285282564916, guid: 083b1c0acf208e943a4036617437acc2, type: 2}
   - {fileID: 1488647455005290, guid: b4844329b0bfae148b51e59739ca8cee, type: 2}
   - {fileID: 1623932565671548, guid: e951726284065ac4cb03eb439b2edefa, type: 2}
+  fireSound: {fileID: 8300000, guid: 90c6c4fe058c4d248868e941956494c4, type: 3}
   speed: 25
   rayFiringRate: 0.5
 --- !u!212 &212626474397556496
