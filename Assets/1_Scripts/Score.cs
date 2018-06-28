@@ -89,7 +89,7 @@ public class Score : MonoBehaviour {
             float shiftx = rectTrans.rect.width * (float)currentSharkCount / (float)maxSharkCount;
             //Debug.Log("after: " + rectTrans.transform.localScale);
             RectTransform rectT = GetComponent<RectTransform>();
-            rectT.transform.position = originalPosition + new Vector3(shiftx, 0, 0);
+            rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
         }
         else
             Debug.LogError("maxSharkCount <= 0");  
