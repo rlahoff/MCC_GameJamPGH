@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour {
 
@@ -70,6 +71,8 @@ public class Score : MonoBehaviour {
 
     private void UpdateProgressBar()
     {
+        if (SceneManager.GetActiveScene().name == "Intermission") return;
+
         // keep the pivot of the progress bar the same as the outline or there will be trouble!
         if (maxSharkCount > 0)
         {

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    string[] levelNames = { "", "Tutorial", "", "Adventure", "You shall not pass!", "Surrounded", "Night", "Icebergs!", "Sharkfest!" };
+
+    void Start()
+    {
+        Debug.Log(GetLevelName());
+    }
 
     public void LoadNextLevel()
     {
@@ -24,6 +30,11 @@ public class LevelManager : MonoBehaviour
             Score.Reset();
 
         SceneManager.LoadScene(name);
+    }
+
+    public string GetLevelName()
+    {
+        return levelNames[SceneManager.GetActiveScene().buildIndex];
     }
 
     public void QuitRequest()

@@ -8,7 +8,7 @@ public enum TUTORIAL_STATE { UNFRIENDLY, SPACEBAR, FRIENDLY, SNOWFLAKE, STAR };
 public class TutorialText : MonoBehaviour {
 
     int count = 0;
-    string[] instructions = {"Can't pass unfriendly shark!", "Press spacebar to shoot ", "Swim through Friendly shark!",
+    string[] instructions = {"Go around unfriendly shark!", "Press spacebar to shoot ", "Swim through Friendly shark!",
         "Snowflake changes your color", "Star exits level" }; 
      
 
