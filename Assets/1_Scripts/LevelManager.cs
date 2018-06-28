@@ -17,9 +17,9 @@ public class LevelManager : MonoBehaviour
             text.GetComponent<Text>().text = GetLevelName();
         }
         else
-            Debug.Log("no LevelName found");
+            Debug.Log("no LevelName text found");
 
-        Debug.Log(GetLevelName());
+        //Debug.Log(GetLevelName());
     }
 
     public void LoadNextLevel()

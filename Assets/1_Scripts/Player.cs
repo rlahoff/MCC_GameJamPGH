@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     //[SerializeField] Snowflake.COLOR my_Color = Snowflake.COLOR.Yellow;
     COLOR my_Color = COLOR.Yellow;
 
-    enum STATE { LEVEL_PLAY, FINAL_SCREEN };
+    enum STATE { LEVEL_PLAY, FINAL_SCREEN, START_SCREEN };
     [SerializeField] STATE my_state = STATE.LEVEL_PLAY;
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
@@ -50,7 +50,6 @@ public class Player : MonoBehaviour {
                 break;
 
             case STATE.FINAL_SCREEN:
-        
                 if (sceneName != "Final")
                 {
                     Debug.LogError("Player my_state set to FINAL_SCREEN.  Change to LEVEL_PLAY in inspector.");
@@ -61,7 +60,28 @@ public class Player : MonoBehaviour {
                     StartForFinalScene();
                 }
                 break;
+
+            case STATE.START_SCREEN:
+                if (sceneName != "Start")
+                {
+                    Debug.LogError("Player my_state set to START_SCREEN.  Change to LEVEL_PLAY in inspector.");
+                    my_state = STATE.LEVEL_PLAY;
+                }
+                else
+                {
+                    StartForStartScene();
+                }
+                break;
         }
+    }
+
+    private void StartForStartScene()
+    {
+        GameObject penguin = GameObject.Find("Penguin_Blue");
+        penguin.GetComponent<Animator>().SetTrigger("BlueSwim");
+
+        penguin = GameObject.Find("Penguin_Green");
+        penguin.GetComponent<Animator>().SetTrigger("GreenSwim");
     }
 
     private void StartForFinalScene()
@@ -83,7 +103,6 @@ public class Player : MonoBehaviour {
         //playingTimeElapsed.ToString(
         string str = string.Format("{0:0.00}", playingTimeElapsed);
         text.GetComponent<Text>().text = "Time: " + str + " seconds";
-
     }
 
     // Update is called once per frame
@@ -99,6 +118,10 @@ public class Player : MonoBehaviour {
 
     private void ProcessInput()
     {
+        // as an easter egg intentionally leaving in the ability to move around the final screen
+        if (my_state == STATE.START_SCREEN)
+            return;
+
         bool moveRight = false;
         bool moveLeft = false;
         bool moveUp = false;
