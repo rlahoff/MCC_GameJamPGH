@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     string[] levelNames = { "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
-        "Icebergs", "Sharkfest", "", "", "" };
+        "Icebergs", "Sharkfest", "Final Challenge", "", "", "" };
 
     void Start()
     {
