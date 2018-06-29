@@ -80,34 +80,72 @@ public class Score : MonoBehaviour {
         // i think it's an art problem and i'm going to try to work around it
         if (maxSharkCount > 0)
         {
-            RectTransform rectTrans = GetComponent<RectTransform>();
-            //Debug.Log("position: " + rectTrans.transform.position);
-            //Debug.Log("original: " + originalPosition);
-            //Debug.Log("width   : " + rectTrans.rect.width);
-           // Debug.Log("maxSharkCount   : " + maxSharkCount);
-
-
-            //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);
-            float percentageComplete = (float)currentSharkCount / (float)maxSharkCount;
-            float newx = maxScaleX * percentageComplete;
-            //Debug.Log("UpdateProgressBar" + " " + maxScaleX + " " + currentSharkCount + " = " + newx);
- 
-            //Debug.Log("before: " + rectTrans.transform.localScale);
-            rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
-
-            //float shiftx = (float)rectTrans.rect.width * (1f - percentageComplete);
-            float shiftx = originalWidth * (1f - percentageComplete);
-
-            // kluge for bad art (too much transparent space to the left and right, add 10%?
-            shiftx += (originalWidth * (1f - percentageComplete))/10f;
-
-            Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
-            //Debug.Log("shiftx = " + shiftx);
-            //Debug.Log("after: " + rectTrans.transform.localScale);
-            RectTransform rectT = GetComponent<RectTransform>();
-            rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
+            OldProgressBar();
         }
         else
             Debug.LogError("maxSharkCount <= 0");  
      }
+
+    void NewProgressBar()
+    {
+        RectTransform rectTrans = GetComponent<RectTransform>();
+        //Debug.Log("position: " + rectTrans.transform.position);
+        //Debug.Log("original: " + originalPosition);
+        //Debug.Log("width   : " + rectTrans.rect.width);
+        // Debug.Log("maxSharkCount   : " + maxSharkCount);
+
+
+        //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);
+        float percentageComplete = (float)currentSharkCount / (float)maxSharkCount;
+        float newx = maxScaleX * percentageComplete;
+        //Debug.Log("UpdateProgressBar" + " " + maxScaleX + " " + currentSharkCount + " = " + newx);
+
+        //Debug.Log("before: " + rectTrans.transform.localScale);
+        rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
+
+        //float shiftx = (float)rectTrans.rect.width * (1f - percentageComplete);
+        float shiftx = originalWidth * (1f - percentageComplete);
+
+        // kluge for bad art (too much transparent space to the left and right, add 10%?
+        shiftx += (originalWidth * (1f - percentageComplete)) / 10f;
+
+        Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
+        //Debug.Log("shiftx = " + shiftx);
+        //Debug.Log("after: " + rectTrans.transform.localScale);
+        RectTransform rectT = GetComponent<RectTransform>();
+        rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
+
+    }
+
+void OldProgressBar()
+    {
+        RectTransform rectTrans = GetComponent<RectTransform>();
+        //Debug.Log("position: " + rectTrans.transform.position);
+        //Debug.Log("original: " + originalPosition);
+        //Debug.Log("width   : " + rectTrans.rect.width);
+        // Debug.Log("maxSharkCount   : " + maxSharkCount);
+
+
+        //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);
+        float percentageComplete = (float)currentSharkCount / (float)maxSharkCount;
+        float newx = maxScaleX * percentageComplete;
+        //Debug.Log("UpdateProgressBar" + " " + maxScaleX + " " + currentSharkCount + " = " + newx);
+
+        //Debug.Log("before: " + rectTrans.transform.localScale);
+        rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
+
+        //float shiftx = (float)rectTrans.rect.width * (1f - percentageComplete);
+        float shiftx = originalWidth * (1f - percentageComplete);
+
+        // kluge for bad art (too much transparent space to the left and right, add 10%?
+        shiftx += (originalWidth * (1f - percentageComplete)) / 10f;
+
+        Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
+        //Debug.Log("shiftx = " + shiftx);
+        //Debug.Log("after: " + rectTrans.transform.localScale);
+        RectTransform rectT = GetComponent<RectTransform>();
+        rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
+
+    }
 }
+
