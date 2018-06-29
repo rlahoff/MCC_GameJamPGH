@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cbd8686c1ff4e4fb05674c5b685ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  friendSound: {fileID: 8300000, guid: a922c917f83bfd944b4983eb93eb9699, type: 3}
   my_comp_color: 2
 --- !u!212 &212684310792761256
 SpriteRenderer:

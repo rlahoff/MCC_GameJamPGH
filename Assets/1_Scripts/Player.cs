@@ -17,8 +17,8 @@ public class Player : MonoBehaviour {
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
     public AudioClip fireSound;             // andrea
-    public AudioSource _as;
     public AudioClip bumpSound;
+    public AudioClip successSound;
 
     public float speed = 8;
     public float rayFiringRate = 0.2f;
@@ -37,7 +37,6 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        _as = GetComponent<AudioSource>(bumpSound);
         //Check if the current Active Scene's name is your first Scene
         String sceneName = SceneManager.GetActiveScene().name;
 
@@ -349,9 +348,10 @@ public class Player : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "areas" )
-
-        _as.PlayOneShot(bumpSound);
+        if (col.gameObject.tag == "areas")
+        {
+            AudioSource.PlayClipAtPoint(bumpSound, transform.position);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -367,6 +367,12 @@ public class Player : MonoBehaviour {
             Snowflake snowflake = collision.gameObject.GetComponent<Snowflake>();
             TriggerSnowflake(snowflake.Color());
         }
+    }
+
+    public void TriggerGoal()
+    {
+        AudioSource.PlayClipAtPoint(successSound, transform.position);
+        Invoke("LoadNextScene", .5f); // will load next scene in two seconds 
     }
 
     private void TriggerSnowflake(COLOR color)
@@ -396,7 +402,7 @@ public class Player : MonoBehaviour {
 
     }
 
-    private void TriggerGoal()
+    private void LoadNextScene()
     {
         GameObject levelManagerGO = GameObject.Find("LevelManager");
 

@@ -8,6 +8,8 @@ public class Shark : MonoBehaviour {
     int scoreValue = 1;
     private Score score;
 
+    public AudioClip friendSound;             // andrea
+
     const int FRIENDLY_LAYER = 10;
 
     [SerializeField] COMP_COLOR my_comp_color;
@@ -86,6 +88,7 @@ public class Shark : MonoBehaviour {
                     Debug.LogWarning("missing shark code");
                     break;
             }
+            AudioSource.PlayClipAtPoint(friendSound, transform.position);
             gameObject.layer = FRIENDLY_LAYER;
             score.AddToScore(scoreValue);
         }

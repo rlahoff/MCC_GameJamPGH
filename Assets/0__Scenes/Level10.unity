@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 38352198}
   m_Layer: 12
   m_Name: Iceberg (26)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,6 +367,10 @@ Prefab:
       propertyPath: m_Name
       value: Shark (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1132753727751786, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
   m_IsPrefabParent: 0
@@ -471,6 +475,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -487,7 +495,7 @@ GameObject:
   - component: {fileID: 82699009}
   m_Layer: 12
   m_Name: Iceberg (15)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -774,7 +782,7 @@ GameObject:
   - component: {fileID: 217078071}
   m_Layer: 12
   m_Name: Iceberg (31)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -868,7 +876,7 @@ GameObject:
   - component: {fileID: 233730144}
   m_Layer: 12
   m_Name: Iceberg (36)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,6 +1012,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -1020,7 +1032,7 @@ GameObject:
   - component: {fileID: 317310953}
   m_Layer: 12
   m_Name: Iceberg (38)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1114,7 +1126,7 @@ GameObject:
   - component: {fileID: 331187499}
   m_Layer: 12
   m_Name: Iceberg (6)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1213,7 +1225,7 @@ GameObject:
   - component: {fileID: 354758448}
   m_Layer: 12
   m_Name: Iceberg (22)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1349,6 +1361,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -1365,7 +1381,7 @@ GameObject:
   - component: {fileID: 406042679}
   m_Layer: 12
   m_Name: Iceberg (24)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1501,6 +1517,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -1559,6 +1579,10 @@ Prefab:
       propertyPath: m_Name
       value: Shark_Red (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1692215983717284, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
   m_IsPrefabParent: 0
@@ -1616,6 +1640,10 @@ Prefab:
     - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_Name
       value: SeaBlockLong (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
@@ -1775,6 +1803,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -1829,6 +1861,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.25233626
       objectReference: {fileID: 0}
+    - target: {fileID: 1692215983717284, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
   m_IsPrefabParent: 0
@@ -1882,6 +1918,10 @@ Prefab:
     - target: {fileID: 4822403736855928, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.25412297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132753727751786, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
@@ -1953,6 +1993,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -1969,7 +2013,7 @@ GameObject:
   - component: {fileID: 642557635}
   m_Layer: 12
   m_Name: Iceberg (30)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2117,6 +2161,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -2175,6 +2223,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -2191,7 +2243,7 @@ GameObject:
   - component: {fileID: 673361762}
   m_Layer: 12
   m_Name: Iceberg (32)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2359,7 +2411,7 @@ GameObject:
   - component: {fileID: 734086701}
   m_Layer: 12
   m_Name: Iceberg (46)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2507,6 +2559,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -2564,6 +2620,10 @@ Prefab:
     - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_Name
       value: SeaBlockLong (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
@@ -2635,7 +2695,7 @@ GameObject:
   - component: {fileID: 788776405}
   m_Layer: 12
   m_Name: Iceberg (13)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2771,6 +2831,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -2787,7 +2851,7 @@ GameObject:
   - component: {fileID: 800062691}
   m_Layer: 12
   m_Name: Iceberg (40)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2881,7 +2945,7 @@ GameObject:
   - component: {fileID: 806814039}
   m_Layer: 12
   m_Name: Iceberg (8)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3034,6 +3098,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3104,6 +3172,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3162,6 +3234,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3219,6 +3295,10 @@ Prefab:
     - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_Name
       value: SeaBlockLong (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
@@ -3315,6 +3395,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3385,6 +3469,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3454,6 +3542,10 @@ Prefab:
     - target: {fileID: 4777443554756614, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
@@ -3578,6 +3670,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3594,7 +3690,7 @@ GameObject:
   - component: {fileID: 908811819}
   m_Layer: 12
   m_Name: Iceberg (39)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3730,6 +3826,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -3746,7 +3846,7 @@ GameObject:
   - component: {fileID: 931980505}
   m_Layer: 12
   m_Name: Iceberg (12)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3845,7 +3945,7 @@ GameObject:
   - component: {fileID: 954037703}
   m_Layer: 12
   m_Name: Iceberg (45)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3981,6 +4081,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -4002,7 +4106,7 @@ GameObject:
   - component: {fileID: 1005381550}
   m_Layer: 12
   m_Name: Iceberg (10)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4096,7 +4200,7 @@ GameObject:
   - component: {fileID: 1037236355}
   m_Layer: 12
   m_Name: Iceberg (34)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4391,6 +4495,10 @@ Prefab:
       propertyPath: m_Name
       value: Shark_Red (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1692215983717284, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
   m_IsPrefabParent: 0
@@ -4448,6 +4556,10 @@ Prefab:
     - target: {fileID: 1132753727751786, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
       propertyPath: m_Name
       value: Shark (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132753727751786, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
@@ -4519,6 +4631,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -4577,6 +4693,10 @@ Prefab:
       propertyPath: m_Name
       value: Shark (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1132753727751786, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c6f9127c968ed4981b1eefefae33e9, type: 2}
   m_IsPrefabParent: 0
@@ -4593,7 +4713,7 @@ GameObject:
   - component: {fileID: 1106305296}
   m_Layer: 12
   m_Name: Iceberg (27)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4746,7 +4866,7 @@ GameObject:
   - component: {fileID: 1120173992}
   m_Layer: 12
   m_Name: Iceberg (9)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4887,6 +5007,10 @@ Prefab:
       propertyPath: m_Name
       value: Shark_Red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1692215983717284, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
   m_IsPrefabParent: 0
@@ -4903,7 +5027,7 @@ GameObject:
   - component: {fileID: 1166302782}
   m_Layer: 12
   m_Name: Iceberg (44)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5056,7 +5180,7 @@ GameObject:
   - component: {fileID: 1219332479}
   m_Layer: 12
   m_Name: Iceberg (42)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5192,6 +5316,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -5208,7 +5336,7 @@ GameObject:
   - component: {fileID: 1224788497}
   m_Layer: 12
   m_Name: Iceberg (41)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5394,6 +5522,10 @@ Prefab:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1979110219526006, guid: ca5baee5a841056428d16baf7cd6abb6, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5baee5a841056428d16baf7cd6abb6, type: 2}
   m_IsPrefabParent: 0
@@ -5535,7 +5667,7 @@ GameObject:
   - component: {fileID: 1328595695}
   m_Layer: 12
   m_Name: Iceberg (7)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5629,7 +5761,7 @@ GameObject:
   - component: {fileID: 1330067513}
   m_Layer: 12
   m_Name: Iceberg (28)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5723,7 +5855,7 @@ GameObject:
   - component: {fileID: 1347441875}
   m_Layer: 12
   m_Name: Iceberg (19)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5859,6 +5991,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -5979,7 +6115,7 @@ GameObject:
   - component: {fileID: 1446007153}
   m_Layer: 12
   m_Name: Iceberg (33)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6073,7 +6209,7 @@ GameObject:
   - component: {fileID: 1447676896}
   m_Layer: 12
   m_Name: Iceberg (16)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6220,6 +6356,10 @@ Prefab:
     - target: {fileID: 4777443554756614, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
@@ -6412,6 +6552,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -6482,6 +6626,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -6498,7 +6646,7 @@ GameObject:
   - component: {fileID: 1553130699}
   m_Layer: 12
   m_Name: Iceberg (11)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6634,6 +6782,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -6650,7 +6802,7 @@ GameObject:
   - component: {fileID: 1576460272}
   m_Layer: 12
   m_Name: Iceberg (37)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6931,7 +7083,7 @@ GameObject:
   - component: {fileID: 1586350759}
   m_Layer: 12
   m_Name: Iceberg (23)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7030,7 +7182,7 @@ GameObject:
   - component: {fileID: 1614314122}
   m_Layer: 12
   m_Name: Iceberg (20)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7124,7 +7276,7 @@ GameObject:
   - component: {fileID: 1633199559}
   m_Layer: 12
   m_Name: Iceberg (35)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7218,7 +7370,7 @@ GameObject:
   - component: {fileID: 1708100623}
   m_Layer: 12
   m_Name: Iceberg (21)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7459,6 +7611,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -7475,7 +7631,7 @@ GameObject:
   - component: {fileID: 1768921294}
   m_Layer: 12
   m_Name: Iceberg (43)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7611,6 +7767,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -7627,7 +7787,7 @@ GameObject:
   - component: {fileID: 1788750713}
   m_Layer: 12
   m_Name: Iceberg (14)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7721,7 +7881,7 @@ GameObject:
   - component: {fileID: 1823491489}
   m_Layer: 12
   m_Name: Iceberg (18)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7815,7 +7975,7 @@ GameObject:
   - component: {fileID: 1858329391}
   m_Layer: 12
   m_Name: Iceberg (25)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8005,6 +8165,10 @@ Prefab:
       propertyPath: m_Name
       value: Shark_Red (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1692215983717284, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 005dbddaa1cc71c49af6451f456d0f5a, type: 2}
   m_IsPrefabParent: 0
@@ -8134,7 +8298,7 @@ GameObject:
   - component: {fileID: 1923340459}
   m_Layer: 12
   m_Name: Iceberg (29)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8228,7 +8392,7 @@ GameObject:
   - component: {fileID: 1927670206}
   m_Layer: 12
   m_Name: Iceberg (5)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8327,7 +8491,7 @@ GameObject:
   - component: {fileID: 1963334597}
   m_Layer: 12
   m_Name: Iceberg (17)
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8517,6 +8681,10 @@ Prefab:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1979110219526006, guid: ca5baee5a841056428d16baf7cd6abb6, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5baee5a841056428d16baf7cd6abb6, type: 2}
   m_IsPrefabParent: 0
@@ -8579,6 +8747,10 @@ Prefab:
     - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_Name
       value: SeaBlockLong (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
@@ -8714,6 +8886,10 @@ Prefab:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1979110219526006, guid: ca5baee5a841056428d16baf7cd6abb6, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5baee5a841056428d16baf7cd6abb6, type: 2}
   m_IsPrefabParent: 0
@@ -8783,6 +8959,10 @@ Prefab:
     - target: {fileID: 4777443554756614, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
