@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
     //[SerializeField] Snowflake.COLOR my_Color = Snowflake.COLOR.Yellow;
-    COLOR my_Color = COLOR.Yellow;
+    [SerializeField] COLOR my_Color = COLOR.Yellow;
 
     enum STATE { LEVEL_PLAY, FINAL_SCREEN, START_SCREEN };
     [SerializeField] STATE my_state = STATE.LEVEL_PLAY;
@@ -85,10 +85,10 @@ public class Player : MonoBehaviour {
         my_startScreenColor = COLOR.Yellow;
 
         if (my_Color == COLOR.Blue)
-        //GameObject penguin = GameObject.Find("Penguin_Blue");
+            //GameObject penguin = GameObject.Find("Penguin_Blue");
             GetComponent<Animator>().SetTrigger("BlueSwim");
         else if (my_Color == COLOR.Green)
-        //penguin = GameObject.Find("Penguin_Green");
+            //penguin = GameObject.Find("Penguin_Green");
             GetComponent<Animator>().SetTrigger("GreenSwim");
     }
 
