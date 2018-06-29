@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50968051441087240}
   m_Layer: 0
   m_Name: MoveSeaBlock
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
