@@ -25,6 +25,7 @@ public class Score : MonoBehaviour {
 
         currentSharkCount = 0;
         maxSharkCount = SharksOnThisLevel();
+        Debug.Log("maxSharksCount " + maxSharkCount );
 
         UpdateProgressBar();
     }
@@ -109,12 +110,12 @@ public class Score : MonoBehaviour {
         // kluge for bad art (too much transparent space to the left and right, add 10%?
         shiftx += (originalWidth * (1f - percentageComplete)) / 10f;
 
-        Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
+        //Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
         //Debug.Log("shiftx = " + shiftx);
         //Debug.Log("after: " + rectTrans.transform.localScale);
         RectTransform rectT = GetComponent<RectTransform>();
         rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
-
+        Debug.Log("rectT.transform.position = " + rectT.transform.position.x );
     }
 
 void OldProgressBar()
@@ -140,11 +141,12 @@ void OldProgressBar()
         // kluge for bad art (too much transparent space to the left and right, add 10%?
         shiftx += (originalWidth * (1f - percentageComplete)) / 10f;
 
-        Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
+        //Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
         //Debug.Log("shiftx = " + shiftx);
         //Debug.Log("after: " + rectTrans.transform.localScale);
         RectTransform rectT = GetComponent<RectTransform>();
         rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
+        Debug.Log("rectT.transform.position = " + rectT.transform.position.x);
 
     }
 }
