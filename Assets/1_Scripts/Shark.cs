@@ -90,7 +90,8 @@ public class Shark : MonoBehaviour {
             }
             AudioSource.PlayClipAtPoint(friendSound, transform.position);
             gameObject.layer = FRIENDLY_LAYER;
-            score.AddToScore(scoreValue);
+            if (score) // because no score on Start level
+                score.AddToScore(scoreValue);
         }
 
 

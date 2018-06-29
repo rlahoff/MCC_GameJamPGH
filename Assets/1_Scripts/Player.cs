@@ -13,7 +13,8 @@ public class Player : MonoBehaviour {
     enum STATE { LEVEL_PLAY, FINAL_SCREEN, START_SCREEN };
     [SerializeField] STATE my_state = STATE.LEVEL_PLAY;
     int startScreenCounter;
-    COLOR my_startScreenColor = COLOR.Blue;
+    //COLOR my_startScreenColor = COLOR.Blue;
+    const int ENEMY_LAYER = 9;
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
     public AudioClip fireSound;             // andrea
@@ -82,36 +83,63 @@ public class Player : MonoBehaviour {
     private void StartForStartScene()
     {
         startScreenCounter = 0;
-        my_startScreenColor = COLOR.Yellow;
+        //my_startScreenColor = COLOR.Yellow;
 
         if (my_Color == COLOR.Blue)
             //GameObject penguin = GameObject.Find("Penguin_Blue");
-            GetComponent<Animator>().SetTrigger("BlueSwim");
+            GetComponent<Animator>().Play("Blue Swim");
         else if (my_Color == COLOR.Green)
             //penguin = GameObject.Find("Penguin_Green");
-            GetComponent<Animator>().SetTrigger("GreenSwim");
+            GetComponent<Animator>().Play("Green Swim");
     }
 
     private void FixedUpdateForStartScene()
     //public enum COLOR { Yellow, Green, Blue, COLOR_COUNT };
     //public enum COMP_COLOR { Purple, Red, Orange, COLOR_COUNT }; private void FixedUpdateForStartScene()
     {
-        int count = 100;
-        count++;
+        int[] fireAtCount = { 140, 80, 20 };
+        int resetAtCount = fireAtCount[0] * 3;
 
-        GameObject penguin;
+        startScreenCounter++;
 
-        if (startScreenCounter > count)
+        if (startScreenCounter == fireAtCount[(int)my_Color])
         {
-            switch (my_startScreenColor)
-            {
-                case COLOR.Blue:
-                    penguin = GameObject.Find("Penguin_Blue");
-                    //penguin.GetComponent<"Player">().;
-                    break;
-            }
+            Debug.Log("Fire!");
+            FireColorRay();
+
+        }
+        else if (startScreenCounter >= resetAtCount)
+        {
+            // don't reset startScreenCounter until chage purle
+            // can't pass parameters when invoking, no time to study coroutines
+            Invoke("ChangeSharkToEnemyOrange", .4f);
+            Invoke("ChangeSharkToEnemyRed", .5f);
+            Invoke("ChangeSharkToEnemyPurple", .6f);
         }
 
+    }
+
+    private void ChangeSharkToEnemyOrange()
+    {
+        GameObject shark = GameObject.Find("Shark_Orange");
+        shark.GetComponent<Animator>().Play("Enemy_Orange");
+        shark.layer = ENEMY_LAYER;
+    }
+
+    private void ChangeSharkToEnemyRed()
+    {
+        GameObject shark = GameObject.Find("Shark_Red");
+        shark.GetComponent<Animator>().Play("Enemy_Red");
+        shark.layer = ENEMY_LAYER;
+    }
+
+    private void ChangeSharkToEnemyPurple()
+    {
+        GameObject shark = GameObject.Find("Shark");
+        shark.GetComponent<Animator>().Play("Purple");
+        shark.layer = ENEMY_LAYER;
+
+        startScreenCounter = 0;
     }
 
     private void StartForFinalScene()
