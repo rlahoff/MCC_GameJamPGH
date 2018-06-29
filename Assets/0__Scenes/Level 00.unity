@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 54906812}
   m_Layer: 0
   m_Name: Sharks
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1073,6 +1073,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlock (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 1634480721852466, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
   m_IsPrefabParent: 0
@@ -1585,7 +1589,7 @@ GameObject:
   - component: {fileID: 611985220}
   m_Layer: 0
   m_Name: sea blocks
-  m_TagString: Untagged
+  m_TagString: areas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1998,6 +2002,20 @@ Prefab:
     - target: {fileID: 1634480721852466, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
       propertyPath: m_Name
       value: SeaBlock (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634480721852466, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
+    - target: {fileID: 61738251093875964, guid: 687284071e21c564ca79260b9b2e7092,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61738251093875964, guid: 687284071e21c564ca79260b9b2e7092,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
@@ -4262,6 +4280,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlockLong (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1551123805535106, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a387a20a427a6cc4bbb83a3322cc9ed3, type: 2}
   m_IsPrefabParent: 0
@@ -4647,6 +4669,10 @@ Prefab:
       propertyPath: m_Name
       value: SeaBlock (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 1634480721852466, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
+      propertyPath: m_TagString
+      value: areas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 687284071e21c564ca79260b9b2e7092, type: 2}
   m_IsPrefabParent: 0
@@ -4869,6 +4895,16 @@ Prefab:
     - target: {fileID: 4765150087623934, guid: 60b499b746be47443b9e70464dcb4093, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468719816046496, guid: 60b499b746be47443b9e70464dcb4093,
+        type: 2}
+      propertyPath: bumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bc05a89231e8a654fa93866c5d7467a7, type: 3}
+    - target: {fileID: 61317192789677856, guid: 60b499b746be47443b9e70464dcb4093,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60b499b746be47443b9e70464dcb4093, type: 2}

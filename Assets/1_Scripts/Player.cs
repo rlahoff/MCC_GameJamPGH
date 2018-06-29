@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
     public AudioClip fireSound;             // andrea
+    public AudioSource _as;
     public AudioClip bumpSound;
 
     public float speed = 8;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        _as = GetComponent<AudioSource>(bumpSound);
         //Check if the current Active Scene's name is your first Scene
         String sceneName = SceneManager.GetActiveScene().name;
 
@@ -345,9 +347,11 @@ public class Player : MonoBehaviour {
         AudioSource.PlayClipAtPoint(fireSound, transform.position); // andrea
     }
 
-    private void onCollision()
+    public void OnCollisionEnter2D(Collision2D col)
     {
-        AudioSource.PlayClipAtPoint(bumpSound, transform.position); // andrea
+        if (col.gameObject.tag == "areas" )
+
+        _as.PlayOneShot(bumpSound);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
