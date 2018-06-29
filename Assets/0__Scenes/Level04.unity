@@ -1001,7 +1001,7 @@ Prefab:
     - target: {fileID: 224947230228380726, guid: 601b542a9ca1dac4aa74bcf50ae3fec5,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224947230228380726, guid: 601b542a9ca1dac4aa74bcf50ae3fec5,
         type: 2}
@@ -1846,7 +1846,7 @@ Prefab:
     - target: {fileID: 224985223469602992, guid: a587e428dbeee6f48b512a1dc54ed8e0,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224985223469602992, guid: a587e428dbeee6f48b512a1dc54ed8e0,
         type: 2}
@@ -5620,7 +5620,7 @@ Prefab:
     - target: {fileID: 224833117175811402, guid: 2221eaa740209b24f9c2e33d00e4eec7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224833117175811402, guid: 2221eaa740209b24f9c2e33d00e4eec7,
         type: 2}
@@ -8007,6 +8007,14 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637532644399322, guid: e17c375a2dfa51740ad546ba9f0aef0c, type: 2}
+      propertyPath: m_Name
+      value: Shark Progress2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637532644399322, guid: e17c375a2dfa51740ad546ba9f0aef0c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e17c375a2dfa51740ad546ba9f0aef0c, type: 2}
@@ -11806,7 +11814,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4098116110510596, guid: 99be89967cc629b4c935f3a0a3f0d438, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114531343191336242, guid: 99be89967cc629b4c935f3a0a3f0d438,
         type: 2}
