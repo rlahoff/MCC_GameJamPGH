@@ -19,6 +19,10 @@ public class LevelManager : MonoBehaviour
         else
             Debug.Log("no LevelName text found");
 
+        GameObject gO = GameObject.Find("AudioAmbient");
+        if (!gO)
+             Debug.LogError("Level " + GetLevelName() + ": no AudioAmbient found");
+
         //Debug.Log(GetLevelName());
     }
 

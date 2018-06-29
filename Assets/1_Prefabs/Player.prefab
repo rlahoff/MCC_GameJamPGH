@@ -127,7 +127,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: 90c6c4fe058c4d248868e941956494c4, type: 3}
   bumpSound: {fileID: 8300000, guid: bc05a89231e8a654fa93866c5d7467a7, type: 3}
   successSound: {fileID: 8300000, guid: c74da30f782ca7640a4892c9ab4bfd85, type: 3}
-  speed: 25
+  my_speed: 25
   rayFiringRate: 0.5
 --- !u!212 &212626474397556496
 SpriteRenderer:

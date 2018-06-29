@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
     public AudioClip bumpSound;
     public AudioClip successSound;
 
-    public float speed = 8;
+    public float my_speed = 25;
     public float rayFiringRate = 0.2f;
 
     enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
@@ -230,7 +230,7 @@ public class Player : MonoBehaviour {
         Vector3 moveVector = FacingVector(my_facing);
        
         // move
-        transform.position += moveVector * speed * Time.deltaTime;
+        transform.position += moveVector * my_speed * Time.deltaTime;
 
         // rotate
         if (my_facing != my_oldFacing)
@@ -336,6 +336,11 @@ public class Player : MonoBehaviour {
         beam = Instantiate(colorRayPrefabs[(int)my_Color], transform.position, Quaternion.identity) as GameObject;
 
         float speed = beam.gameObject.GetComponent<ColorRay>().GetSpeed();
+        //Debug.Log("myspeed = " + my_speed + " coloray " + speed);
+        // ensure colorRay faster than player
+        if (speed < my_speed + 5f)
+            speed = my_speed + 5f;
+
         beam.gameObject.GetComponent<ColorRay>().SetColor(my_Color);
 
 
