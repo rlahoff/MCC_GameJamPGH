@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
     public AudioClip fireSound;             // andrea
+    public AudioClip bumpSound;
 
     public float speed = 8;
     public float rayFiringRate = 0.2f;
@@ -311,6 +312,11 @@ public class Player : MonoBehaviour {
         beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * facingVector.x, speed * facingVector.y);
 
         AudioSource.PlayClipAtPoint(fireSound, transform.position); // andrea
+    }
+
+    private void onCollision()
+    {
+        AudioSource.PlayClipAtPoint(bumpSound, transform.position); // andrea
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
