@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
 
     enum STATE { LEVEL_PLAY, FINAL_SCREEN, START_SCREEN };
     [SerializeField] STATE my_state = STATE.LEVEL_PLAY;
+    int startScreenCounter;
+    COLOR my_startScreenColor = COLOR.Blue;
 
     public GameObject[] colorRayPrefabs;    // set these in the inspector
     public AudioClip fireSound;             // andrea
@@ -77,11 +79,37 @@ public class Player : MonoBehaviour {
 
     private void StartForStartScene()
     {
-        GameObject penguin = GameObject.Find("Penguin_Blue");
-        penguin.GetComponent<Animator>().SetTrigger("BlueSwim");
+        startScreenCounter = 0;
+        my_startScreenColor = COLOR.Yellow;
 
-        penguin = GameObject.Find("Penguin_Green");
-        penguin.GetComponent<Animator>().SetTrigger("GreenSwim");
+        if (my_Color == COLOR.Blue)
+        //GameObject penguin = GameObject.Find("Penguin_Blue");
+            GetComponent<Animator>().SetTrigger("BlueSwim");
+        else if (my_Color == COLOR.Green)
+        //penguin = GameObject.Find("Penguin_Green");
+            GetComponent<Animator>().SetTrigger("GreenSwim");
+    }
+
+    private void FixedUpdateForStartScene()
+    //public enum COLOR { Yellow, Green, Blue, COLOR_COUNT };
+    //public enum COMP_COLOR { Purple, Red, Orange, COLOR_COUNT }; private void FixedUpdateForStartScene()
+    {
+        int count = 100;
+        count++;
+
+        GameObject penguin;
+
+        if (startScreenCounter > count)
+        {
+            switch (my_startScreenColor)
+            {
+                case COLOR.Blue:
+                    penguin = GameObject.Find("Penguin_Blue");
+                    //penguin.GetComponent<"Player">().;
+                    break;
+            }
+        }
+
     }
 
     private void StartForFinalScene()
@@ -113,7 +141,10 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate()
     {
-        playingTimeElapsed += Time.fixedDeltaTime;
+        if (my_state == STATE.START_SCREEN)
+            FixedUpdateForStartScene();
+        else
+            playingTimeElapsed += Time.fixedDeltaTime;
     }
 
     private void ProcessInput()
