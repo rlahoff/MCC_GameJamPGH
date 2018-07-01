@@ -8,7 +8,7 @@ public class Shark : MonoBehaviour {
     int scoreValue = 1;
     private Score score;
 
-    public AudioClip friendSound;             // andrea
+    public AudioClip friendSound;             
 
     const int FRIENDLY_LAYER = 10;
 
@@ -22,7 +22,7 @@ public class Shark : MonoBehaviour {
 
         if (!scoreGO)
         {
-            Debug.LogWarning("Create a Canvas (if not present).  Place a Shark Progress in it on this level");
+            Debug.LogWarning("Create a Canvas (if not present).  Place the 3 Shark Progress prefabs in it on this level");
         }
         else
             score = scoreGO.GetComponent<Score>();
@@ -41,18 +41,6 @@ public class Shark : MonoBehaviour {
             ChangeColorState();
     }
 
- /*   private void OnOnTriggerEnter2D(Collider2D collision)
-    {
-
-        PowerRay powerRay = collision.gameObject.GetComponent<PowerRay>();
-
-        if (powerRay)
-        {
-            ChangeColorState();
-            powerRay.Hit();
-        }
-    }*/
-
     private void ChangeColorState()
     {
         Animator animator = GetComponent<Animator>();
@@ -68,7 +56,7 @@ public class Shark : MonoBehaviour {
             firstColorChange = true;
         }
 
-        if (animator /*&& anim.IsPlaying("Purple")*/)
+        if (animator)
         {
             switch(my_comp_color)
             {
@@ -88,6 +76,7 @@ public class Shark : MonoBehaviour {
                     Debug.LogWarning("missing shark code");
                     break;
             }
+
             AudioSource.PlayClipAtPoint(friendSound, transform.position);
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level

@@ -104,13 +104,12 @@ public class Player : MonoBehaviour {
 
         if (startScreenCounter == fireAtCount[(int)my_Color])
         {
-            Debug.Log("Fire!");
             FireColorRay();
 
         }
         else if (startScreenCounter >= resetAtCount)
         {
-            // don't reset startScreenCounter until chage purle
+            // don't reset startScreenCounter until change purple
             // can't pass parameters when invoking, no time to study coroutines
             Invoke("ChangeSharkToEnemyOrange", .4f);
             Invoke("ChangeSharkToEnemyRed", .5f);

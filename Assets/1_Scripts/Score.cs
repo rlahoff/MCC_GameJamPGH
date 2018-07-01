@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour {
 
-    //public static int score = 0;
-    static int gameScore = 0;
+   static int gameScore = 0;
     int currentSharkCount;
     int maxSharkCount;
 
@@ -18,7 +17,6 @@ public class Score : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        //maxScaleX = transform.localScale.x;
         maxScaleX = GetComponent<RectTransform>().transform.localScale.x;
         originalPosition = GetComponent<RectTransform>().transform.position;
         originalWidth = GetComponent<RectTransform>().rect.width;
@@ -115,7 +113,7 @@ public class Score : MonoBehaviour {
         //Debug.Log("after: " + rectTrans.transform.localScale);
         RectTransform rectT = GetComponent<RectTransform>();
         rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
-        Debug.Log("rectT.transform.position = " + rectT.transform.position.x );
+        //Debug.Log("rectT.transform.position = " + rectT.transform.position.x );
     }
 
 void OldProgressBar()
@@ -146,7 +144,7 @@ void OldProgressBar()
         //Debug.Log("after: " + rectTrans.transform.localScale);
         RectTransform rectT = GetComponent<RectTransform>();
         rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
-        Debug.Log("rectT.transform.position = " + rectT.transform.position.x);
+        //Debug.Log("rectT.transform.position = " + rectT.transform.position.x);
 
     }
 }
