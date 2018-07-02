@@ -6,8 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    string[] levelNames = { "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
-        "Icebergs", "Sharkfest", "Final Challenge", "", "", "" };
+    // these two should match
+    string[] levelNames = 
+                  { "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
+
+                    "Icebergs", "Sharkfest", "Final Challenge", "", "", "" };
+    public
+    enum LEVELS   { START, TUTORIAL0, INTERMISSION, ADVENTURE1, NOTPASS2, TOWER3, NIGHT4, 
+
+                     ICEBERGS10, SHARKFEST11, FINAL12, SCORE, TEST, TEST2 };
+
+    LEVELS thisLevel;
 
     void Start()
     {
@@ -19,11 +28,18 @@ public class LevelManager : MonoBehaviour
         else
             Debug.Log("no LevelName text found");
 
+        thisLevel = (LEVELS)SceneManager.GetActiveScene().buildIndex;
+
         GameObject gO = GameObject.Find("AudioAmbient");
         if (!gO)
              Debug.LogError("Level " + GetLevelName() + ": no AudioAmbient found");
 
         //Debug.Log(GetLevelName());
+    }
+
+    public LEVELS GetLevel()
+    {
+        return thisLevel;
     }
 
     public void LoadNextLevel()
