@@ -108,7 +108,8 @@ public class Score : MonoBehaviour {
         // with lots of sharks
 
         // kluge , add 10%?, not sure why I still have this problem after getting art w/o transparent space on left and right
-        shiftx += (originalWidth * (1f - percentageComplete)) / 10f;
+        // test smaller kluge
+        shiftx += (originalWidth * (1f - percentageComplete)) / 15f;
 
         //Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
         //Debug.Log("shiftx = " + shiftx);

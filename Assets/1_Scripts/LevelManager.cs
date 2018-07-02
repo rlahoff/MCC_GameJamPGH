@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 
                      ICEBERGS10, SHARKFEST11, FINAL12, SCORE, TEST, TEST2 };
 
-    LEVELS thisLevel;
+    static LEVELS thisLevel;
 
     void Start()
     {
@@ -30,6 +30,8 @@ public class LevelManager : MonoBehaviour
 
         thisLevel = (LEVELS)SceneManager.GetActiveScene().buildIndex;
 
+        StartByLevel();
+
         GameObject gO = GameObject.Find("AudioAmbient");
         if (!gO)
              Debug.LogError("Level " + GetLevelName() + ": no AudioAmbient found");
@@ -37,7 +39,17 @@ public class LevelManager : MonoBehaviour
         //Debug.Log(GetLevelName());
     }
 
-    public LEVELS GetLevel()
+    void StartByLevel()
+    {
+        switch(thisLevel)
+        {
+            case LEVELS.ADVENTURE1:
+                Score.Reset();
+                break;
+        }
+    }
+
+    public static LEVELS GetLevel()
     {
         return thisLevel;
     }

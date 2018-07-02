@@ -45,7 +45,7 @@ public class Shark : MonoBehaviour {
     {
         Animator animator = GetComponent<Animator>();
 
-        if (!firstColorChange)
+        if (!firstColorChange && LevelManager.GetLevel() == LevelManager.LEVELS.TUTORIAL0)
         {
             GameObject tutorial = GameObject.Find("TutorialCollider");
             if (tutorial)
