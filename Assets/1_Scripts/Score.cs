@@ -88,9 +88,9 @@ public class Score : MonoBehaviour {
  void ProgressBar()
     {
         RectTransform rectTrans = GetComponent<RectTransform>();
-        //Debug.Log("position: " + rectTrans.transform.position);
-        //Debug.Log("original: " + originalPosition);
-        //Debug.Log("width   : " + rectTrans.rect.width);
+        Debug.Log("position: " + rectTrans.transform.position);
+        Debug.Log("original: " + originalPosition);
+        Debug.Log("width   : " + rectTrans.rect.width);
         // Debug.Log("maxSharkCount   : " + maxSharkCount);
 
         //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);
@@ -102,20 +102,20 @@ public class Score : MonoBehaviour {
         rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
 
         //float shiftx = (float)rectTrans.rect.width * (1f - percentageComplete);
-        float shiftx = originalWidth * (1f - percentageComplete);
+        //float shiftx = originalWidth * (1f - percentageComplete);
 
         // the bad art (too much transparent space to the left and right resulted in a faded progress bar for levels 
         // with lots of sharks
 
-        // kluge , add 10%?, not sure why I still have this problem after getting art w/o transparent space on left and right
-        // test smaller kluge
-        shiftx += (originalWidth * (1f - percentageComplete)) / 15f;
-
+        // kluge , add ?%?, not sure why I still have this problem after getting art w/o transparent space on left and right
+        // kluge value changed with new UI canvas scaling to screen size
+        //shiftx += (originalWidth * (1f - percentageComplete)) / 1.5f;
+        //shiftx = 0;
         //Debug.Log(percentageComplete + " newx = " + newx + " shiftX " + shiftx);
         //Debug.Log("shiftx = " + shiftx);
         //Debug.Log("after: " + rectTrans.transform.localScale);
-        RectTransform rectT = GetComponent<RectTransform>();
-        rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
+        //RectTransform rectT = GetComponent<RectTransform>();
+        //rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
         //Debug.Log("rectT.transform.position = " + rectT.transform.position.x);
     }
 }
