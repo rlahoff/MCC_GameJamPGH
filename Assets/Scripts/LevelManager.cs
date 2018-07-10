@@ -8,18 +8,23 @@ public class LevelManager : MonoBehaviour
 {
     // these two should match
     string[] levelNames = 
-                  { "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
+                  { "", "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
 
-                    "Icebergs", "Sharkfest", "Final Challenge", "", "", "" };
+                    "Icebergs", "Sharkfest", "Final Challenge", "", "", "", "" };
     public
-    enum LEVELS   { START, TUTORIAL0, INTERMISSION, ADVENTURE1, NOTPASS2, TOWER3, NIGHT4, 
+    enum LEVELS   { SPLASH, START, TUTORIAL0, INTERMISSION, ADVENTURE1, NOTPASS2, TOWER3, NIGHT4, 
 
-                     ICEBERGS10, SHARKFEST11, FINAL12, SCORE, TEST, TEST2 };
+                     ICEBERGS10, SHARKFEST11, FINAL12, SCORE, OPTIONS, TEST, TEST2 };
 
     static LEVELS thisLevel;
 
+    public float autoLoadNextLevelDelay;
+
     void Start()
     {
+        if (autoLoadNextLevelDelay > 0) // probably only used for the splash screen
+            Invoke("LoadNextLevel", autoLoadNextLevelDelay);
+
         GameObject text = GameObject.Find("LevelName");
         if (text)
         {

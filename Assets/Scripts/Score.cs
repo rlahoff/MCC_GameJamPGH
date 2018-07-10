@@ -12,14 +12,12 @@ public class Score : MonoBehaviour {
 
     float maxScaleX;
     Vector3 originalPosition;
-    float originalWidth;
 
     // Use this for initialization
     void Start()
     {
         maxScaleX = GetComponent<RectTransform>().transform.localScale.x;
         originalPosition = GetComponent<RectTransform>().transform.position;
-        originalWidth = GetComponent<RectTransform>().rect.width;
 
         currentSharkCount = 0;
         maxSharkCount = SharksOnThisLevel();
@@ -75,8 +73,6 @@ public class Score : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Intermission") return;
 
         // keep the pivot of the progress bar the same as the outline or there will be trouble!
-        //maxSharkCount = 10;
-        // i think it's an art problem and i'm going to try to work around it
         if (maxSharkCount > 0)
         {
             ProgressBar();

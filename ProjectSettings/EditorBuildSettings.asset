@@ -6,42 +6,48 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/0__Scenes/Start.unity
+    path: Assets/_Scenes/Splash.unity
+    guid: 5384cf2bd29e284448aec58a901d754b
+  - enabled: 1
+    path: Assets/_Scenes/Start.unity
     guid: 3480b13868a52804ebea06c3619eb553
   - enabled: 1
-    path: Assets/0__Scenes/Level 00.unity
+    path: Assets/_Scenes/Level 00.unity
     guid: ebdedc71d36a66b4e98aa409a4a982ad
   - enabled: 1
-    path: Assets/0__Scenes/Intermission.unity
+    path: Assets/_Scenes/Intermission.unity
     guid: 553484b7022e4e84a92c5c1232cc6586
   - enabled: 1
-    path: Assets/0__Scenes/Level 01.unity
+    path: Assets/_Scenes/Level 01.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/0__Scenes/Level02.unity
+    path: Assets/_Scenes/Level02.unity
     guid: 5ca8e5f3b136ca64c9f9b53032be4cea
   - enabled: 1
-    path: Assets/0__Scenes/Level03.unity
+    path: Assets/_Scenes/Level03.unity
     guid: 342b522d9a7ae264986353d6cf562936
   - enabled: 1
-    path: Assets/0__Scenes/Level04.unity
+    path: Assets/_Scenes/Level04.unity
     guid: 5658492e26622ad4b9a8343b2321de25
   - enabled: 1
-    path: Assets/0__Scenes/Level10.unity
+    path: Assets/_Scenes/Level10.unity
     guid: 69d46169194bd6b478eebac976205297
   - enabled: 1
-    path: Assets/0__Scenes/Level11.unity
+    path: Assets/_Scenes/Level11.unity
     guid: 1d4f171e903f1c5419f96cfddee401cc
   - enabled: 1
-    path: Assets/0__Scenes/level12.unity
+    path: Assets/_Scenes/level12.unity
     guid: 8fdbb273202ce6948b2d3051cc46a532
   - enabled: 1
-    path: Assets/0__Scenes/Final.unity
+    path: Assets/_Scenes/Final.unity
     guid: ec96b66e2fd92444bbc6df755e1cad41
+  - enabled: 1
+    path: Assets/_Scenes/Options.unity
+    guid: 273d7906dca58754ba24f96987a0b44e
   - enabled: 0
-    path: Assets/0__Scenes/Test.unity
+    path: Assets/_Scenes/Z_Test.unity
     guid: 78781f901934fd94f9dd57b7b1b9c185
   - enabled: 0
-    path: Assets/0__Scenes/TestTransition.unity
+    path: Assets/_Scenes/Z_TestTransition.unity
     guid: 404019e041c0c4a4a82b6cd170dbd8c4
   m_configObjects: {}
