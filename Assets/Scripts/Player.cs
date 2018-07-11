@@ -223,7 +223,7 @@ public class Player : MonoBehaviour {
         {
             CancelInvoke("FireColorRay");
         }
-        if (Input.GetKey(KeyCode.N))
+        if (Debug.isDebugBuild && Input.GetKey(KeyCode.N))
         {
             GameObject levelManagerGO = GameObject.Find("LevelManager");
 
