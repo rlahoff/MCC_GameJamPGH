@@ -19,7 +19,7 @@ public class OptionsController : MonoBehaviour {
             Debug.LogWarning("MusicManager not found");
 
         musicVolumeSlider.value = PPrefsMgr.GetMusicVolume();
-        sfxVolumeSlider.value   = PPrefsMgr.GetSfxVolume();
+        sfxVolumeSlider.value   = PPrefsMgr.GetSfxVolumeFromDisk();
         difficultySlider.value  = PPrefsMgr.GetDifficulty();
 	}
 	

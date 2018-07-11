@@ -78,7 +78,7 @@ public class Shark : MonoBehaviour {
                     break;
             }
 
-            AudioSource.PlayClipAtPoint(friendSound, transform.position);
+            AudioSource.PlayClipAtPoint(friendSound, transform.position, PPrefsMgr.GetSfxVolume());
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level
                 score.AddToScore(scoreValue);

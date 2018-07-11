@@ -10,6 +10,8 @@ public class PPrefsMgr : MonoBehaviour {
     const string DIFFICULTY_KEY = "difficulty";
  //   const string LEVEL_KEY = "level_unlocked_"; // level_unlocked_0, level_unlocked_1, etc.
 
+    private static float sfxVolume;   // save sfxVolume for use by game so we're not pulling from disk all the time
+
     public static void SetMusicVolume(float volume)
     {
         if (volume >= 0 && volume <= 1)
@@ -23,17 +25,26 @@ public class PPrefsMgr : MonoBehaviour {
         return PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY);
     }
 
+    public static float GetSfxVolume()
+    {
+        return sfxVolume;
+    }
+
     public static void SetSfxVolume(float volume)
     {
         if (volume >= 0 && volume <= 1)
-            PlayerPrefs.SetFloat(SFX_VOLUME_KEY, volume);
+        {
+            sfxVolume = volume;
+            PlayerPrefs.SetFloat(SFX_VOLUME_KEY, sfxVolume);
+        }
         else
             Debug.LogError("master volume out of range: " + volume);
     }
 
-    public static float GetSfxVolume()
+    public static float GetSfxVolumeFromDisk()
     {
-        return PlayerPrefs.GetFloat(SFX_VOLUME_KEY);
+        sfxVolume = PlayerPrefs.GetFloat(SFX_VOLUME_KEY);
+        return sfxVolume;
     }
 
     /*    public static void UnlockLevel(int level)

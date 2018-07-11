@@ -375,14 +375,14 @@ public class Player : MonoBehaviour {
         Vector3 facingVector = FacingVector(my_facing);
         beam.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * facingVector.x, speed * facingVector.y);
 
-        AudioSource.PlayClipAtPoint(fireSound, transform.position); // andrea
+        AudioSource.PlayClipAtPoint(fireSound, transform.position, PPrefsMgr.GetSfxVolume()); // andrea
     }
 
     public void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "areas")
         {
-            AudioSource.PlayClipAtPoint(bumpSound, transform.position);
+            AudioSource.PlayClipAtPoint(bumpSound, transform.position, PPrefsMgr.GetSfxVolume());
         }
     }
 
@@ -403,7 +403,7 @@ public class Player : MonoBehaviour {
 
     public void TriggerGoal()
     {
-        AudioSource.PlayClipAtPoint(successSound, transform.position);
+        AudioSource.PlayClipAtPoint(successSound, transform.position, PPrefsMgr.GetSfxVolume());
         Invoke("LoadNextScene", .5f); // will load next scene in two seconds 
     }
 
