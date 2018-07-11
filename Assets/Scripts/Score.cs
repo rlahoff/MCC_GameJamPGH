@@ -11,17 +11,17 @@ public class Score : MonoBehaviour {
     int maxSharkCount;
 
     float maxScaleX;
-    Vector3 originalPosition;
+    //Vector3 originalPosition;
 
     // Use this for initialization
     void Start()
     {
         maxScaleX = GetComponent<RectTransform>().transform.localScale.x;
-        originalPosition = GetComponent<RectTransform>().transform.position;
+        //originalPosition = GetComponent<RectTransform>().transform.position;
 
         currentSharkCount = 0;
         maxSharkCount = SharksOnThisLevel();
-        Debug.Log("maxSharksCount " + maxSharkCount );
+ //       Debug.Log("maxSharksCount " + maxSharkCount );
 
         UpdateProgressBar();
     }
@@ -34,7 +34,8 @@ public class Score : MonoBehaviour {
 
         if (!sharksGO)
         {
-            Debug.LogWarning("Create an Empty Gameobject and name it Sharks.  Put all sharks in it. ");
+            if (LevelManager.GetLevel() != LevelManager.LEVELS.TUTORIAL0)
+                Debug.LogWarning("Create an Empty Gameobject and name it Sharks.  Put all sharks in it. ");
         }
         else
             sharkCount = sharksGO.transform.childCount;
@@ -50,7 +51,7 @@ public class Score : MonoBehaviour {
 
     public static void Reset()
     {
-        Debug.Log("ScoreReset");
+        //Debug.Log("ScoreReset");
 
         gameScore = 0;
     }
@@ -84,9 +85,9 @@ public class Score : MonoBehaviour {
  void ProgressBar()
     {
         RectTransform rectTrans = GetComponent<RectTransform>();
-        Debug.Log("position: " + rectTrans.transform.position);
-        Debug.Log("original: " + originalPosition);
-        Debug.Log("width   : " + rectTrans.rect.width);
+        //Debug.Log("position: " + rectTrans.transform.position);
+        //Debug.Log("original: " + originalPosition);
+        //Debug.Log("width   : " + rectTrans.rect.width);
         // Debug.Log("maxSharkCount   : " + maxSharkCount);
 
         //Debug.Log(GetComponent<RectTransform>().transform.localScale.x);

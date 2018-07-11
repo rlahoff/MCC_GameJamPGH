@@ -223,6 +223,17 @@ public class Player : MonoBehaviour {
         {
             CancelInvoke("FireColorRay");
         }
+        if (Input.GetKey(KeyCode.N))
+        {
+            GameObject levelManagerGO = GameObject.Find("LevelManager");
+
+            if (levelManagerGO)
+            {
+                LevelManager levelManager = levelManagerGO.GetComponent<LevelManager>();
+                levelManager.LoadNextLevel();
+            }
+        }
+
     }
 
     private void MovePlayer(bool moveRight, bool moveLeft, bool moveUp, bool moveDown)

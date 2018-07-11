@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     // these two should match
     string[] levelNames = 
-                  { "Splash", "Start", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
+                  { "Splash", "Start", "Tutorial", "Intermission", "Adventure", "You shall not pass!", "Shark Tower", "Night",
 
                     "Icebergs", "Sharkfest", "Final Challenge", "Final", "Options", "Z Test", "Z Test Transition" };
     public
@@ -25,6 +25,8 @@ public class LevelManager : MonoBehaviour
         if (autoLoadNextLevelDelay > 0) // probably only used for the splash screen
             Invoke("LoadNextLevel", autoLoadNextLevelDelay);
 
+        Debug.Log("******* Level " + GetLevelName() + " *******");
+        thisLevel = (LEVELS)SceneManager.GetActiveScene().buildIndex;
 
         GameObject text = GameObject.Find("LevelName");
         if (text)
@@ -33,9 +35,6 @@ public class LevelManager : MonoBehaviour
         }
         else if (IsLevel())
             Debug.LogWarning("no LevelName text gameobject found in canvas");
-
-        thisLevel = (LEVELS)SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("*** Level " + GetLevelName() + " ***");
 
         StartByLevel();
 
