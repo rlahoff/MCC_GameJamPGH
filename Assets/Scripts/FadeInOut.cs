@@ -15,7 +15,7 @@ public class FadeInOut : MonoBehaviour {
 	void Start () {
 
         fadePanel = GetComponent<Image>();
-		
+        Debug.Log("Fade start");
 	}
 	
 	// Update is called once per frame

@@ -22,7 +22,8 @@ public class Shark : MonoBehaviour {
 
         if (!scoreGO)
         {
-            Debug.LogWarning("Create a Canvas (if not present).  Place the 3 Shark Progress prefabs in it on this level");
+            if (LevelManager.IsLevel())
+                Debug.LogWarning("Create a Canvas (if not present).  Place the 3 Shark Progress prefabs in it on this level");
         }
         else
             score = scoreGO.GetComponent<Score>();

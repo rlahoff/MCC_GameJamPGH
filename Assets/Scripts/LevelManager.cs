@@ -8,9 +8,9 @@ public class LevelManager : MonoBehaviour
 {
     // these two should match
     string[] levelNames = 
-                  { "", "", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
+                  { "Splash", "Start", "Tutorial", "", "Adventure", "You shall not pass!", "Shark Tower", "Night",
 
-                    "Icebergs", "Sharkfest", "Final Challenge", "", "", "", "" };
+                    "Icebergs", "Sharkfest", "Final Challenge", "Final", "Options", "Z Test", "Z Test Transition" };
     public
     enum LEVELS   { SPLASH, START, TUTORIAL0, INTERMISSION, ADVENTURE1, NOTPASS2, TOWER3, NIGHT4, 
 
@@ -25,21 +25,23 @@ public class LevelManager : MonoBehaviour
         if (autoLoadNextLevelDelay > 0) // probably only used for the splash screen
             Invoke("LoadNextLevel", autoLoadNextLevelDelay);
 
+
         GameObject text = GameObject.Find("LevelName");
         if (text)
         {
             text.GetComponent<Text>().text = GetLevelName();
         }
-        else
-            Debug.Log("no LevelName text found");
+        else if (IsLevel())
+            Debug.LogWarning("no LevelName text gameobject found in canvas");
 
         thisLevel = (LEVELS)SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("*** Level " + GetLevelName() + " ***");
 
         StartByLevel();
 
         GameObject gO = GameObject.Find("AudioAmbient");
-        if (!gO)
-             Debug.LogError("Level " + GetLevelName() + ": no AudioAmbient found");
+        if (gO)
+             Debug.LogError("Level " + GetLevelName() + ": AudioAmbient gameobject found, remove from this level");
 
         //Debug.Log(GetLevelName());
     }
@@ -48,10 +50,37 @@ public class LevelManager : MonoBehaviour
     {
         switch(thisLevel)
         {
+            case LEVELS.START:
+                // we set the fade screen to inactive so it isn't blocking our view while working in unity
+                // so we have to turn it on when we actually run the game
+                GameObject dialog = GameObject.Find("FadeScreenParent");
+                if (dialog)
+                {
+                    dialog.transform.GetChild(0).gameObject.SetActive(true);
+                }
+                break;
             case LEVELS.ADVENTURE1:
                 Score.Reset();
                 break;
         }
+    }
+
+    public static bool IsLevel()
+    {
+        bool islevel = true;
+        switch(thisLevel)
+        {
+            case LEVELS.SPLASH:
+            case LEVELS.START:
+            case LEVELS.INTERMISSION:
+            case LEVELS.SCORE:
+            case LEVELS.OPTIONS:
+            case LEVELS.TEST:
+            case LEVELS.TEST2:
+                islevel = false;
+                break;
+        }
+        return islevel;
     }
 
     public static LEVELS GetLevel()
