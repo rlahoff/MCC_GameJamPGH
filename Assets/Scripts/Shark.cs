@@ -69,20 +69,15 @@ public class Shark : MonoBehaviour {
             switch (my_comp_color)
             {
                 case COMP_COLOR.Purple:
-                    //main.startColor = new Color(0.5f, 0f, 1f);   // purple
                     main.startColor = Color.yellow;  // yellow
- //                   animator.Play("Yellow");
                     break;
 
                 case COMP_COLOR.Red:
                     main.startColor = Color.green;
- //                   animator.SetTrigger("Friendly");
                     break;
 
                 case COMP_COLOR.Orange:
- //                   main.startColor = new Color(1f, 0.5f, 0f);  // orange
                     main.startColor = Color.blue;
-  //                  animator.SetTrigger("Friendly");
                     break;
 
                 default:
