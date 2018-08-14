@@ -8,7 +8,8 @@ public class Shark : MonoBehaviour {
     int scoreValue = 1;
     private Score score;
 
-    public AudioClip friendSound;             
+    public AudioClip friendSound;
+    public GameObject hitParticles;
 
     const int FRIENDLY_LAYER = 10;
 
@@ -57,19 +58,25 @@ public class Shark : MonoBehaviour {
             firstColorChange = true;
         }
 
+        ParticleSystem.MainModule main = hitParticles.GetComponent<ParticleSystem>().main;
+
         if (animator)
         {
-            switch(my_comp_color)
+            switch (my_comp_color)
             {
                 case COMP_COLOR.Purple:
+                    //main.startColor = new Color(122, 0, 255);   // purple
+                    main.startColor = Color.green;
                     animator.Play("Yellow");
                     break;
 
                 case COMP_COLOR.Red:
+                    main.startColor = Color.red;
                     animator.SetTrigger("Friendly");
                     break;
 
                 case COMP_COLOR.Orange:
+                    main.startColor = new Color(255, 122, 0);  // orange
                     animator.SetTrigger("Friendly");
                     break;
 
@@ -78,12 +85,30 @@ public class Shark : MonoBehaviour {
                     break;
             }
 
+            
+            GameObject particles = Instantiate(hitParticles, transform.position, Quaternion.identity) as GameObject;
+            //ParticleSystem.MainModule main = particles.GetComponent<ParticleSystem>().main;
+            //main.startColor = Color.yellow;
+
             AudioSource.PlayClipAtPoint(friendSound, transform.position, PPrefsMgr.GetSfxVolume());
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level
                 score.AddToScore(scoreValue);
         }
 
+        // Every 2 seconds we will emit.
+        InvokeRepeating("DoEmit", 0.1f, 0.1f);
+    }
 
+    void DoEmit()
+    {
+        // Any parameters we assign in emitParams will override the current system's when we call Emit.
+        // Here we will override the start color. All other parameters will use the behavior defined in the Inspector.
+        Debug.Log("DoEmit");
+        var emitParams = new ParticleSystem.EmitParams();
+        emitParams.startColor = Color.white;
+        hitParticles.GetComponent<ParticleSystem>().Emit(emitParams, 10);
+        hitParticles.GetComponent<ParticleSystem>().Play();
     }
 }
+
