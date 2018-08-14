@@ -15,11 +15,14 @@ public class Shark : MonoBehaviour {
     const int FRIENDLY_LAYER = 10;
 
     [SerializeField] COMP_COLOR my_comp_color;
+    [SerializeField] float changetime;
 
     static bool firstColorChange = false;
 
     // Use this for initialization
     void Start () {
+        changetime = 0.15f;
+
         GameObject scoreGO = GameObject.Find("Shark Progress");
 
         if (!scoreGO)
@@ -66,18 +69,20 @@ public class Shark : MonoBehaviour {
             switch (my_comp_color)
             {
                 case COMP_COLOR.Purple:
-                    main.startColor = new Color(0.5f, 0f, 1f);   // purple
-                    animator.Play("Yellow");
+                    //main.startColor = new Color(0.5f, 0f, 1f);   // purple
+                    main.startColor = Color.yellow;  // yellow
+ //                   animator.Play("Yellow");
                     break;
 
                 case COMP_COLOR.Red:
-                    main.startColor = Color.red;
-                    animator.SetTrigger("Friendly");
+                    main.startColor = Color.green;
+ //                   animator.SetTrigger("Friendly");
                     break;
 
                 case COMP_COLOR.Orange:
-                    main.startColor = new Color(1f, 0.5f, 0f);  // orange
-                    animator.SetTrigger("Friendly");
+ //                   main.startColor = new Color(1f, 0.5f, 0f);  // orange
+                    main.startColor = Color.blue;
+  //                  animator.SetTrigger("Friendly");
                     break;
 
                 default:
@@ -92,7 +97,16 @@ public class Shark : MonoBehaviour {
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level
                 score.AddToScore(scoreValue);
+
+            Invoke("ChangeToFriendly", changetime); // will change shark color after particles 
         }
+    }
+
+    void ChangeToFriendly()
+    {
+        Animator animator = GetComponent<Animator>();
+        if (animator)
+            animator.SetTrigger("Friendly");
     }
 }
 
