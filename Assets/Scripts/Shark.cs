@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Shark : MonoBehaviour {
 
     int scoreValue = 1;
@@ -65,8 +66,7 @@ public class Shark : MonoBehaviour {
             switch (my_comp_color)
             {
                 case COMP_COLOR.Purple:
-                    //main.startColor = new Color(122, 0, 255);   // purple
-                    main.startColor = Color.green;
+                    main.startColor = new Color(0.5f, 0f, 1f);   // purple
                     animator.Play("Yellow");
                     break;
 
@@ -76,7 +76,7 @@ public class Shark : MonoBehaviour {
                     break;
 
                 case COMP_COLOR.Orange:
-                    main.startColor = new Color(255, 122, 0);  // orange
+                    main.startColor = new Color(1f, 0.5f, 0f);  // orange
                     animator.SetTrigger("Friendly");
                     break;
 
@@ -87,28 +87,12 @@ public class Shark : MonoBehaviour {
 
             
             GameObject particles = Instantiate(hitParticles, transform.position, Quaternion.identity) as GameObject;
-            //ParticleSystem.MainModule main = particles.GetComponent<ParticleSystem>().main;
-            //main.startColor = Color.yellow;
 
             AudioSource.PlayClipAtPoint(friendSound, transform.position, PPrefsMgr.GetSfxVolume());
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level
                 score.AddToScore(scoreValue);
         }
-
-        // Every 2 seconds we will emit.
-        InvokeRepeating("DoEmit", 0.1f, 0.1f);
-    }
-
-    void DoEmit()
-    {
-        // Any parameters we assign in emitParams will override the current system's when we call Emit.
-        // Here we will override the start color. All other parameters will use the behavior defined in the Inspector.
-        Debug.Log("DoEmit");
-        var emitParams = new ParticleSystem.EmitParams();
-        emitParams.startColor = Color.white;
-        hitParticles.GetComponent<ParticleSystem>().Emit(emitParams, 10);
-        hitParticles.GetComponent<ParticleSystem>().Play();
     }
 }
 
