@@ -33,10 +33,10 @@ public class Player : MonoBehaviour {
     static float playingTimeElapsed = 0;
     static int totalSharks = 0;
 
-    private bool isHurt = false;
+    //private bool isHurt = false;
     private bool isStunned = false;
     [SerializeField] float stunnedTime = 1f;
-    [SerializeField] float hurtTime = 5f;
+//    [SerializeField] float hurtTime = 5f;
     private string[] strHurtAnim = { "Yellow_Hurt", "Green_Hurt", "Blue_Hurt" };
 
     // for tutorial
@@ -247,6 +247,8 @@ public class Player : MonoBehaviour {
 
     private void MovePlayer(bool moveRight, bool moveLeft, bool moveUp, bool moveDown)
     {
+        bool changedFacing = my_oldFacing != my_facing;
+
         my_oldFacing = my_facing;
 
         if (moveLeft)
@@ -276,11 +278,13 @@ public class Player : MonoBehaviour {
 
         Vector3 moveVector = FacingVector(my_facing);
 
-        // move
-        float hurtSlow = 1f;
-        if (isHurt) hurtSlow = 0.25f; // slower when hurt
+        // special case move modifier
+        float modifier = 1f;
+        //if (isHurt) modifier = 0.25f; // slower when hurt
+        if (changedFacing) modifier = 0.01f; // hardly move when turning around
 
-        transform.position += moveVector * my_speed * hurtSlow * Time.deltaTime;
+        // move
+        transform.position += moveVector * my_speed * modifier * Time.deltaTime;
 
         // rotate
         if (my_facing != my_oldFacing)
@@ -368,8 +372,6 @@ public class Player : MonoBehaviour {
 
         // move
         float slow = .25f;
-        //if (isHurt) hurtSlow = 0.25f; // slower when hurt
-
         transform.position += moveVector * my_speed * slow * Time.deltaTime;
     }
 
@@ -446,7 +448,7 @@ public class Player : MonoBehaviour {
 
     private void TriggerHurt()
     {
-        isHurt = true;
+        //isHurt = true;
         isStunned = true;
         CancelInvoke("FireColorRay");
 
@@ -457,22 +459,24 @@ public class Player : MonoBehaviour {
         animator.speed = .5f;
 
         Invoke("EndStunned", stunnedTime);
-        Invoke("EndHurt", hurtTime);
+ //       Invoke("EndHurt", hurtTime);
     }
 
-    private void EndStunned()
+   private void EndStunned()
     {
         Animator animator = GetComponent<Animator>();
         animator.SetTrigger("EndHurt");
         isStunned = false;
     }
 
-    private void EndHurt()
+
+/*    private void EndHurt()
     {
-        isHurt = false;
+        //isHurt = false;
         Animator animator = GetComponent<Animator>();
         animator.speed = 1f;
     }
+*/
 
     public void TriggerGoal()
     {
