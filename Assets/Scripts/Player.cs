@@ -34,6 +34,9 @@ public class Player : MonoBehaviour {
     static int totalSharks = 0;
 
     private bool isHurt = false;
+    private bool isStunned = false;
+    [SerializeField] float stunnedTime = 1f;
+    [SerializeField] float hurtTime = 5f;
     private string[] strHurtAnim = { "Yellow_Hurt", "Green_Hurt", "Blue_Hurt" };
 
     // for tutorial
@@ -168,7 +171,10 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ProcessInput();
+        if (isStunned)
+            MoveStunnedPlayer();
+        else
+            ProcessInput();
     }
 
     void FixedUpdate()
@@ -352,6 +358,21 @@ public class Player : MonoBehaviour {
         return moveVector;
     }
 
+    void MoveStunnedPlayer()
+    {
+        Vector3 moveVector = FacingVector(my_facing);
+
+        // reverse
+        moveVector.x *= -1;
+        moveVector.y *= -1;
+
+        // move
+        float slow = .25f;
+        //if (isHurt) hurtSlow = 0.25f; // slower when hurt
+
+        transform.position += moveVector * my_speed * slow * Time.deltaTime;
+    }
+
     private void FireColorRay()
     {
         // for tutorial state
@@ -426,13 +447,24 @@ public class Player : MonoBehaviour {
     private void TriggerHurt()
     {
         isHurt = true;
+        isStunned = true;
+        CancelInvoke("FireColorRay");
+
         Debug.Log("Need a sound here");
         Animator animator = GetComponent<Animator>();
         //animator.SetTrigger(strHurtAnimTrigger[(int)my_Color]);
         animator.Play(strHurtAnim[(int)my_Color]);
         animator.speed = .5f;
 
-        Invoke("EndHurt", 5f);
+        Invoke("EndStunned", stunnedTime);
+        Invoke("EndHurt", hurtTime);
+    }
+
+    private void EndStunned()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("EndHurt");
+        isStunned = false;
     }
 
     private void EndHurt()

@@ -33,6 +33,8 @@ public class Shark : MonoBehaviour {
         else
             score = scoreGO.GetComponent<Score>();
 
+        if (tag != "enemy")
+            Debug.LogWarning("Shark tag not enemy, fix!");
     }
 
     // Update is called once per frame
