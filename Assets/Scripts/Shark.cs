@@ -86,8 +86,6 @@ public class Shark : MonoBehaviour {
             }
 
             
-            GameObject particles = Instantiate(hitParticles, transform.position, Quaternion.identity) as GameObject;
-
             AudioSource.PlayClipAtPoint(friendSound, transform.position, PPrefsMgr.GetSfxVolume());
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level

@@ -25,13 +25,16 @@ public class Player : MonoBehaviour {
     public float rayFiringRate = 0.2f;
 
     enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
-    
+
     private Facing my_facing = Facing.EAST;
     //private Facing my_facing = Facing.EAST;
     private Facing my_oldFacing = Facing.EAST;
 
     static float playingTimeElapsed = 0;
     static int totalSharks = 0;
+
+    private bool isHurt = false;
+    private string[] strHurtAnim = { "Yellow_Hurt", "Green_Hurt", "Blue_Hurt" };
 
     // for tutorial
     bool firstFireColorRay = false;
@@ -212,7 +215,7 @@ public class Player : MonoBehaviour {
         }
 
         //todo, support number pad?
-        
+
         if (moving) MovePlayer(moveRight, moveLeft, moveUp, moveDown);
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -263,12 +266,15 @@ public class Player : MonoBehaviour {
         else
             my_facing = Facing.SOUTH;
 
-       // Debug.Log("facing: " + my_facing);
+        // Debug.Log("facing: " + my_facing);
 
         Vector3 moveVector = FacingVector(my_facing);
-       
+
         // move
-        transform.position += moveVector * my_speed * Time.deltaTime;
+        float hurtSlow = 1f;
+        if (isHurt) hurtSlow = 0.25f; // slower when hurt
+
+        transform.position += moveVector * my_speed * hurtSlow * Time.deltaTime;
 
         // rotate
         if (my_facing != my_oldFacing)
@@ -391,10 +397,15 @@ public class Player : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "areas")
+        if (col.gameObject.tag == "areas")  // all sea blocks, play collision sound
         {
             AudioSource.PlayClipAtPoint(bumpSound, transform.position, PPrefsMgr.GetSfxVolume());
         }
+        else if (col.gameObject.tag == "enemy")
+        {
+            TriggerHurt();
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -410,6 +421,25 @@ public class Player : MonoBehaviour {
             Snowflake snowflake = collision.gameObject.GetComponent<Snowflake>();
             TriggerSnowflake(snowflake.Color());
         }
+    }
+
+    private void TriggerHurt()
+    {
+        isHurt = true;
+        Debug.Log("Need a sound here");
+        Animator animator = GetComponent<Animator>();
+        //animator.SetTrigger(strHurtAnimTrigger[(int)my_Color]);
+        animator.Play(strHurtAnim[(int)my_Color]);
+        animator.speed = .5f;
+
+        Invoke("EndHurt", 5f);
+    }
+
+    private void EndHurt()
+    {
+        isHurt = false;
+        Animator animator = GetComponent<Animator>();
+        animator.speed = 1f;
     }
 
     public void TriggerGoal()

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95183991563608120}
   m_Layer: 0
   m_Name: Shark_Red
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   hitParticles: {fileID: 1672525822080526, guid: 87d5cbaa95b3d0e4dbc6528200de1df6,
     type: 2}
   my_comp_color: 1
+  changetime: 0
 --- !u!212 &212918459954254386
 SpriteRenderer:
   m_ObjectHideFlags: 1
