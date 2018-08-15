@@ -450,7 +450,7 @@ public class Player : MonoBehaviour {
         isStunned = true;
         CancelInvoke("FireColorRay");
 
-        Debug.Log("Need a sound here");
+        Debug.Log("Need a sound here"); // Andrea  
         Animator animator = GetComponent<Animator>();
         //animator.SetTrigger(strHurtAnimTrigger[(int)my_Color]);
         animator.Play(strHurtAnim[(int)my_Color]);

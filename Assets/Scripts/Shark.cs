@@ -34,7 +34,7 @@ public class Shark : MonoBehaviour {
             score = scoreGO.GetComponent<Score>();
 
         if (tag != "enemy")
-            Debug.LogWarning("Shark tag not enemy, fix!");
+            Debug.LogError("Shark tag not enemy, fix!");
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class Shark : MonoBehaviour {
 
     private void ChangeColorState()
     {
-        Animator animator = GetComponent<Animator>();
+        //Animator animator = GetComponent<Animator>();
 
         if (!firstColorChange && LevelManager.GetLevel() == LevelManager.LEVELS.TUTORIAL0)
         {
@@ -66,7 +66,7 @@ public class Shark : MonoBehaviour {
 
         ParticleSystem.MainModule main = hitParticles.GetComponent<ParticleSystem>().main;
 
-        if (animator)
+        if (hitParticles.GetComponent<ParticleSystem>())
         {
             switch (my_comp_color)
             {
@@ -87,7 +87,8 @@ public class Shark : MonoBehaviour {
                     break;
             }
 
-            
+            Instantiate(hitParticles, transform.position, Quaternion.identity);
+
             AudioSource.PlayClipAtPoint(friendSound, transform.position, PPrefsMgr.GetSfxVolume());
             gameObject.layer = FRIENDLY_LAYER;
             if (score) // because no score on Start level
