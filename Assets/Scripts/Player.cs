@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     public float my_speed = 25;
     public float rayFiringRate = 0.2f;
 
-    enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
+    public enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
 
     private Facing my_facing = Facing.EAST;
     //private Facing my_facing = Facing.EAST;
@@ -281,10 +281,9 @@ public class Player : MonoBehaviour {
         // special case move modifier
         float modifier = 1f;
         //if (isHurt) modifier = 0.25f; // slower when hurt
-        if (changedFacing) modifier = 0.01f; // hardly move when turning around
-
-        // move
-        transform.position += moveVector * my_speed * modifier * Time.deltaTime;
+        
+        // move (if not turning around)
+        if (!changedFacing) transform.position += moveVector * my_speed * modifier * Time.deltaTime;
 
         // rotate
         if (my_facing != my_oldFacing)
@@ -409,7 +408,7 @@ public class Player : MonoBehaviour {
             speed = my_speed + 5f;
 
         beam.gameObject.GetComponent<ColorRay>().SetColor(my_Color);
-
+        beam.gameObject.GetComponent<ColorRay>().SetFacing(my_facing);
 
         //enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
         Vector3 facingVector = FacingVector(my_facing);
@@ -422,6 +421,9 @@ public class Player : MonoBehaviour {
     {
         if (col.gameObject.tag == "areas")  // all sea blocks, play collision sound
         {
+            // sometimes when you hit blocks (especially from below) the sound is louder because two play at a time
+            // (2 collisions happen), currently do not consider this a bug. Also this sound isn't as loud as colorray
+            // which I could fix here if we want
             AudioSource.PlayClipAtPoint(bumpSound, transform.position, PPrefsMgr.GetSfxVolume());
         }
         else if (col.gameObject.tag == "enemy")
