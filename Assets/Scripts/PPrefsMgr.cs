@@ -8,7 +8,7 @@ public class PPrefsMgr : MonoBehaviour {
     const string MUSIC_VOLUME_KEY = "music_volume";
     const string SFX_VOLUME_KEY = "sfx_volume";
     const string DIFFICULTY_KEY = "difficulty";
- //   const string LEVEL_KEY = "level_unlocked_"; // level_unlocked_0, level_unlocked_1, etc.
+    //   const string LEVEL_KEY = "level_unlocked_"; // level_unlocked_0, level_unlocked_1, etc.
 
     private static float sfxVolume;   // save sfxVolume for use by game so we're not pulling from disk all the time
 
@@ -25,11 +25,6 @@ public class PPrefsMgr : MonoBehaviour {
         return PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY);
     }
 
-    public static float GetSfxVolume()
-    {
-        return sfxVolume;
-    }
-
     public static void SetSfxVolume(float volume)
     {
         if (volume >= 0 && volume <= 1)
@@ -39,6 +34,13 @@ public class PPrefsMgr : MonoBehaviour {
         }
         else
             Debug.LogError("master volume out of range: " + volume);
+    }
+
+    // because this is checked all the time, we only want to get it from disk if we haven't loaded it yet
+    // which is managed by the LevelManager
+    public static float GetSfxVolume()
+    {
+        return sfxVolume;
     }
 
     public static float GetSfxVolumeFromDisk()

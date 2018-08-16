@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
 
     public float autoLoadNextLevelDelay;
 
+    static bool sfxVolumeInitialized = false;
+
     void Start()
     {
         if (autoLoadNextLevelDelay > 0) // probably only used for the splash screen
@@ -27,6 +29,13 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log("******* Level " + GetLevelName() + " *******");
         thisLevel = (LEVELS)SceneManager.GetActiveScene().buildIndex;
+
+        // initial sfx volume from disk
+        if (!sfxVolumeInitialized)
+        {
+            PPrefsMgr.GetSfxVolumeFromDisk();
+            sfxVolumeInitialized = true;
+        }
 
         GameObject text = GameObject.Find("LevelName");
         if (text)
