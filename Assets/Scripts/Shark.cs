@@ -104,5 +104,12 @@ public class Shark : MonoBehaviour {
         if (animator)
             animator.SetTrigger("Friendly");
     }
+/*
+    void Party()
+    {
+        Animator animator = GetComponent<Animator>();
+        if (animator)
+            animator.SetTrigger("Party");
+    }*/
 }
 

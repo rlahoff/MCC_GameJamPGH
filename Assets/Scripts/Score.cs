@@ -98,7 +98,7 @@ public class Score : MonoBehaviour {
         //Debug.Log("before: " + rectTrans.transform.localScale);
         rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
 
-        if (percentageComplete > 99f)
+        if (percentageComplete > .99f)
         {
             SharkParty();
         }
@@ -126,10 +126,10 @@ public class Score : MonoBehaviour {
 
         int sharkCount = sharksGO.transform.childCount;
 
-        // GameObject[] childs = new Gameobject[transform.childCount]; // Example 5 childs.
         for (int i = 0; i < sharkCount; i++)
         {
-            GameObject shark = transform.GetChild(i).gameObject;
+            GameObject shark = sharksGO.transform.GetChild(i).gameObject;
+            shark.GetComponent<Animator>().SetTrigger("Party");
         }
 
         Invoke("EndParty", 5f);
@@ -144,7 +144,8 @@ public class Score : MonoBehaviour {
         // GameObject[] childs = new Gameobject[transform.childCount]; // Example 5 childs.
         for (int i = 0; i < sharkCount; i++)
         {
-            GameObject shark = transform.GetChild(i).gameObject;
+            GameObject shark = sharksGO.transform.GetChild(i).gameObject;
+            shark.GetComponent<Animator>().SetTrigger("Friendly");
         }
     }
 

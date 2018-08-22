@@ -408,7 +408,7 @@ public class Player : MonoBehaviour {
             speed = my_speed + 5f;
 
         beam.gameObject.GetComponent<ColorRay>().SetColor(my_Color);
-        beam.gameObject.GetComponent<ColorRay>().SetFacing(my_facing);
+        //beam.gameObject.GetComponent<ColorRay>().SetFacing(my_facing);
 
         //enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
         Vector3 facingVector = FacingVector(my_facing);

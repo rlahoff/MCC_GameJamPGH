@@ -8,7 +8,7 @@ public class ColorRay : MonoBehaviour {
     public GameObject hitParticles;
 
     private COLOR my_color;
-    private Player.Facing my_facing;
+ // private Player.Facing my_facing;
 
     // Use this for initialization
     void Start()
@@ -27,10 +27,10 @@ public class ColorRay : MonoBehaviour {
         my_color = color;
     }
 
-    public void SetFacing(Player.Facing facing)
+    /*public void SetFacing(Player.Facing facing)
     {
         my_facing = facing;
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
