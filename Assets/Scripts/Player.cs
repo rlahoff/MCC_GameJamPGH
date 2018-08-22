@@ -232,7 +232,14 @@ public class Player : MonoBehaviour {
         {
             CancelInvoke("FireColorRay");
         }
-        if (Debug.isDebugBuild && Input.GetKey(KeyCode.N))
+        if (Debug.isDebugBuild)
+            ProcessDebugInput();
+
+    }
+
+    private static void ProcessDebugInput()
+    {
+        if (Input.GetKey(KeyCode.N))
         {
             GameObject levelManagerGO = GameObject.Find("LevelManager");
 
@@ -242,7 +249,6 @@ public class Player : MonoBehaviour {
                 levelManager.LoadNextLevel();
             }
         }
-
     }
 
     private void MovePlayer(bool moveRight, bool moveLeft, bool moveUp, bool moveDown)

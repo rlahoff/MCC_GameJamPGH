@@ -46,7 +46,13 @@ public class Score : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        if (Debug.isDebugBuild)
+        { 
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SharkParty(false);
+            }
+        }
     }
 
     public static void Reset()
@@ -100,7 +106,7 @@ public class Score : MonoBehaviour {
 
         if (percentageComplete > .99f)
         {
-            SharkParty();
+            SharkParty(true);
         }
         //float shiftx = (float)rectTrans.rect.width * (1f - percentageComplete);
         //float shiftx = originalWidth * (1f - percentageComplete);
@@ -120,11 +126,18 @@ public class Score : MonoBehaviour {
         //Debug.Log("rectT.transform.position = " + rectT.transform.position.x);
     }
 
-    void SharkParty()
+    public void SharkParty(bool isRealParty)
     {
         GameObject sharksGO = GameObject.Find("Sharks");
 
         int sharkCount = sharksGO.transform.childCount;
+
+        if (!isRealParty)   // we were called from debug mode and need to change the anims to friendly first
+            for (int i = 0; i < sharkCount; i++)
+            {
+                GameObject shark = sharksGO.transform.GetChild(i).gameObject;
+                shark.GetComponent<Animator>().SetTrigger("Friendly");
+            }
 
         for (int i = 0; i < sharkCount; i++)
         {
@@ -132,7 +145,7 @@ public class Score : MonoBehaviour {
             shark.GetComponent<Animator>().SetTrigger("Party");
         }
 
-        Invoke("EndParty", 5f);
+        Invoke("EndParty", 3f);
     }
 
     void EndParty()
