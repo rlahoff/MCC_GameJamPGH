@@ -98,6 +98,10 @@ public class Score : MonoBehaviour {
         //Debug.Log("before: " + rectTrans.transform.localScale);
         rectTrans.transform.localScale = new Vector3(newx, rectTrans.transform.localScale.y, rectTrans.transform.localScale.z);
 
+        if (percentageComplete > 99f)
+        {
+            SharkParty();
+        }
         //float shiftx = (float)rectTrans.rect.width * (1f - percentageComplete);
         //float shiftx = originalWidth * (1f - percentageComplete);
 
@@ -115,5 +119,34 @@ public class Score : MonoBehaviour {
         //rectT.transform.position = originalPosition - new Vector3(shiftx, 0, 0);
         //Debug.Log("rectT.transform.position = " + rectT.transform.position.x);
     }
+
+    void SharkParty()
+    {
+        GameObject sharksGO = GameObject.Find("Sharks");
+
+        int sharkCount = sharksGO.transform.childCount;
+
+        // GameObject[] childs = new Gameobject[transform.childCount]; // Example 5 childs.
+        for (int i = 0; i < sharkCount; i++)
+        {
+            GameObject shark = transform.GetChild(i).gameObject;
+        }
+
+        Invoke("EndParty", 5f);
+    }
+
+    void EndParty()
+    {
+        GameObject sharksGO = GameObject.Find("Sharks");
+
+        int sharkCount = sharksGO.transform.childCount;
+
+        // GameObject[] childs = new Gameobject[transform.childCount]; // Example 5 childs.
+        for (int i = 0; i < sharkCount; i++)
+        {
+            GameObject shark = transform.GetChild(i).gameObject;
+        }
+    }
+
 }
 

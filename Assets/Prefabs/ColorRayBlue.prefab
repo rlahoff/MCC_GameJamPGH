@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  hitParticles: {fileID: 1721991001479044, guid: 0f8121c0fa5cfd04e8112f8a8ef1f5f8,
+  hitParticles: {fileID: 1081499343267768, guid: a488964fb1832d94da38513f4d649a13,
     type: 2}
 --- !u!212 &212799961771418428
 SpriteRenderer:

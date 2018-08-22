@@ -40,11 +40,13 @@ public class ColorRay : MonoBehaviour {
 
         if (shark)
             shark.HitByColorRay(my_color);
+        else
+            ParticleHit();
 
-        Hit();
+        Object.Destroy(gameObject);
     }
 
-    public void Hit()
+    public void ParticleHit()
     {
         // break into pieces
         ParticleSystem.MainModule main = hitParticles.GetComponent<ParticleSystem>().main;
@@ -70,9 +72,12 @@ public class ColorRay : MonoBehaviour {
                     break;
             }
 
+            //try using unity's collision for particles
+            Instantiate(hitParticles, transform.position, Quaternion.identity);
+
+            /*
             //Rotate();   // explode in the opposite direction
-                        //Instantiate(hitParticles, transform.position, Quaternion.identity);
-                        //public enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
+            //public enum Facing { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
             Vector3[] particleRotation = new [] {
                 new Vector3(-90f, 0f, 0f), new Vector3(45f, -45f, 0f),
                 new Vector3(0f, -90f, 0f), new Vector3(-45f, -45f, 0f),
@@ -80,10 +85,11 @@ public class ColorRay : MonoBehaviour {
                 new Vector3(0f, 90f, 0f), new Vector3(45f, 45f, 0f)
             };
             Instantiate(hitParticles, transform.position, Quaternion.Euler(particleRotation[(int)my_facing]));
+            */
         }
 
         //
-        Object.Destroy(gameObject);
+        
     }
 
     public float GetSpeed()
