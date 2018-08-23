@@ -39,6 +39,9 @@ public class Player : MonoBehaviour {
 //    [SerializeField] float hurtTime = 5f;
     private string[] strHurtAnim = { "Yellow_Hurt", "Green_Hurt", "Blue_Hurt" };
 
+    // fluffy, the baby penguin
+    GameObject fluffy;
+
     // for tutorial
     bool firstFireColorRay = false;
     // Use this for initialization
@@ -56,8 +59,12 @@ public class Player : MonoBehaviour {
 
         switch (my_state)
         {
+            // initializations for playable levels
             case STATE.LEVEL_PLAY:
                 totalSharks += Score.SharksOnThisLevel();
+                fluffy = GameObject.Find("Fluffy");
+                if (!fluffy)
+                    Debug.LogWarning("No Fluffy on this level");
                 break;
 
             case STATE.FINAL_SCREEN:
@@ -436,7 +443,6 @@ public class Player : MonoBehaviour {
         {
             TriggerHurt();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -451,6 +457,11 @@ public class Player : MonoBehaviour {
         {
             Snowflake snowflake = collision.gameObject.GetComponent<Snowflake>();
             TriggerSnowflake(snowflake.Color());
+        }
+        else if (collision.name == "PenguinDetector")
+        {
+            fluffy.gameObject.GetComponent<Fluffy>().FollowMe();
+            Destroy(collision);
         }
     }
 

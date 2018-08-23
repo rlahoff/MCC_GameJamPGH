@@ -47,6 +47,8 @@ public class Shark : MonoBehaviour {
     {
         if (Snowflake.IsColorComplementary(color, my_comp_color))
             ChangeColorState();
+        else
+            Mock();
     }
 
     private void ChangeColorState()
@@ -98,18 +100,36 @@ public class Shark : MonoBehaviour {
         }
     }
 
-    void ChangeToFriendly()
+    void ChangeToFriendly() // used after particles 
     {
         Animator animator = GetComponent<Animator>();
         if (animator)
             animator.SetTrigger("Friendly");
     }
-/*
-    void Party()
+
+    void Mock()
+    {
+        Debug.Log("Mock");
+        Animator animator = GetComponent<Animator>();
+        if (animator)
+            animator.Play("Mock");
+
+        Invoke("ChangeToEnemy", 0.75f); // will change shark color after mocking 
+    }
+
+    void ChangeToEnemy() // used after particles 
     {
         Animator animator = GetComponent<Animator>();
         if (animator)
-            animator.SetTrigger("Party");
-    }*/
+            animator.SetTrigger("Enemy");
+    }
+
+    /*
+        void Party()
+        {
+            Animator animator = GetComponent<Animator>();
+            if (animator)
+                animator.SetTrigger("Party");
+        }*/
 }
 
