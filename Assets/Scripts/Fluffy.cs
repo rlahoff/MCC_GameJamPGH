@@ -17,6 +17,9 @@ public class Fluffy : MonoBehaviour {
         player = GameObject.Find("Player");
         if (!player)
             Debug.LogWarning("No Player on this level");
+
+        if (!GameObject.Find("PenguinDetector"))
+            Debug.LogWarning("No FluffysPenguinDetector on this level");
     }
 
     public void FollowMe()
@@ -62,6 +65,7 @@ public class Fluffy : MonoBehaviour {
 		
 	}
 
+    // add to the list of sharks that fluffy is colliding with, because she won't move near them
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "enemy")
@@ -72,6 +76,7 @@ public class Fluffy : MonoBehaviour {
         }
     }
 
+    // remove sharks from the list when fluffy is no longer colliding with them
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "enemy")

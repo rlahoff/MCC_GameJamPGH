@@ -458,7 +458,7 @@ public class Player : MonoBehaviour {
             Snowflake snowflake = collision.gameObject.GetComponent<Snowflake>();
             TriggerSnowflake(snowflake.Color());
         }
-        else if (collision.name == "PenguinDetector")
+        else if (collision.name == "FluffysPenguinDetector")
         {
             fluffy.gameObject.GetComponent<Fluffy>().FollowMe();
             Destroy(collision);
