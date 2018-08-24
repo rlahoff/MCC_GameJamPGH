@@ -5,6 +5,9 @@ using UnityEngine;
 public class Fluffy : MonoBehaviour {
 
     bool isFollowing = false;
+    bool isScared = false;
+    List <Collider2D> sharkColliders;
+
     float my_speed = .5f;
 
     GameObject player;
@@ -15,25 +18,73 @@ public class Fluffy : MonoBehaviour {
         if (!player)
             Debug.LogWarning("No Player on this level");
     }
-	
-	
-	void FixedUpdate () {
-
-        if (isFollowing)
-        {
-            if (Vector3.Distance(player.transform.position, transform.position) > 5)
-            {
-                //transform.position = new Vector3(player.transform.position.x, player.transform.position.y-5f, player.transform.position.z);
-                Vector3 vector = player.transform.position - transform.position;
-                //if (vector.)
-                transform.position += vector * my_speed * Time.deltaTime;
-            }
-        }
-		
-	}
 
     public void FollowMe()
     {
         isFollowing = true;
     }
+
+    void FixedUpdate () {
+
+        if (isFollowing)
+        {
+            if (Vector3.Distance(player.transform.position, transform.position) > 5)
+            {
+                Vector3 vectorToPlayer = player.transform.position - transform.position;
+
+                Vector3 wantToMoveTo = transform.position + (vectorToPlayer * my_speed * Time.deltaTime);
+
+                bool okToMove = true;
+                if (isScared)
+                {
+                    // if where I want to move to is farther to the shark, okay to move!
+
+                    for (int i = 0; i < sharkColliders.Count; i++)
+                    {
+                        // if this would move me closer to a shark, don't do it!
+                        if (Vector3.Distance(wantToMoveTo, sharkColliders[i].transform.position) < 
+                            Vector3.Distance(transform.position, sharkColliders[i].transform.position))
+                        {
+                            okToMove = false;
+                            break;
+                        }
+                    }  
+                }
+                
+                if (okToMove)
+                    transform.position += vectorToPlayer * my_speed * Time.deltaTime;
+                // play with forces, didn't work, penguin just bounced back and forth
+                //Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+                //Vector2 vector = new Vector2(vector3.x * my_speed, vector3.y * my_speed);
+                //rigidbody.AddForce(vector, ForceMode2D.Impulse);
+            }
+        }
+		
+	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "enemy")
+        {
+            isScared = true;
+            sharkColliders.Add(collision);
+            // sharkPosition = collision.transform.position;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "enemy")
+        {
+            for (int i = 0; i < sharkColliders.Count; i++)
+                if (sharkColliders[i] == collision)
+                {
+                    sharkColliders.RemoveAt(i);
+                }
+            if (sharkColliders.Count == 0)
+                isScared = false; 
+        }
+    }
+
+
 }
