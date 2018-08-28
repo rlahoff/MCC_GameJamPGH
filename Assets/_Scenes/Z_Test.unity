@@ -1461,11 +1461,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4874940692001884, guid: 13bd2be5a8aca6249a19f48c66520c03, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.18
+      value: 6.47
       objectReference: {fileID: 0}
     - target: {fileID: 4874940692001884, guid: 13bd2be5a8aca6249a19f48c66520c03, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.7
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 4874940692001884, guid: 13bd2be5a8aca6249a19f48c66520c03, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1697,11 +1697,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4159758515438688, guid: a58d76833719f604ab904dd907818d64, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.65
+      value: 6.62
       objectReference: {fileID: 0}
     - target: {fileID: 4159758515438688, guid: a58d76833719f604ab904dd907818d64, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.64
+      value: -3.55
       objectReference: {fileID: 0}
     - target: {fileID: 4159758515438688, guid: a58d76833719f604ab904dd907818d64, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1726,6 +1726,21 @@ Prefab:
     - target: {fileID: 4159758515438688, guid: a58d76833719f604ab904dd907818d64, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578508096385808, guid: a58d76833719f604ab904dd907818d64,
+        type: 2}
+      propertyPath: baseDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578508096385808, guid: a58d76833719f604ab904dd907818d64,
+        type: 2}
+      propertyPath: minDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578508096385808, guid: a58d76833719f604ab904dd907818d64,
+        type: 2}
+      propertyPath: maxDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a58d76833719f604ab904dd907818d64, type: 2}

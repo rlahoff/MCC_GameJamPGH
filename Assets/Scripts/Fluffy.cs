@@ -8,7 +8,12 @@ public class Fluffy : MonoBehaviour {
     bool isScared = false;
     List <Collider2D> sharkColliders;
 
-    float my_speed = .5f;
+    float my_baseSpeed = .5f;
+    float baseDistance = 5;
+    float minDistance = 3;
+    //[SerializeField] float maxDistance;
+    //[SerializeField] float minSpeed;
+    //[SerializeField] float maxSpeed;
 
     GameObject player;
 
@@ -18,8 +23,10 @@ public class Fluffy : MonoBehaviour {
         if (!player)
             Debug.LogWarning("No Player on this level");
 
-        if (!GameObject.Find("PenguinDetector"))
+        if (!GameObject.Find("FluffysPenguinDetector"))
             Debug.LogWarning("No FluffysPenguinDetector on this level");
+        if (!GameObject.Find("FluffysGoal"))
+            Debug.LogWarning("No FluffysGoal on this level");
     }
 
     public void FollowMe()
@@ -31,11 +38,13 @@ public class Fluffy : MonoBehaviour {
 
         if (isFollowing)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) > 5)
+            if (Vector3.Distance(player.transform.position, transform.position) > minDistance)
             {
+                float speed = CalculateSpeed();
+
                 Vector3 vectorToPlayer = player.transform.position - transform.position;
 
-                Vector3 wantToMoveTo = transform.position + (vectorToPlayer * my_speed * Time.deltaTime);
+                Vector3 wantToMoveTo = transform.position + (vectorToPlayer * speed * Time.deltaTime);
 
                 bool okToMove = true;
                 if (isScared)
@@ -55,7 +64,7 @@ public class Fluffy : MonoBehaviour {
                 }
                 
                 if (okToMove)
-                    transform.position += vectorToPlayer * my_speed * Time.deltaTime;
+                    transform.position += vectorToPlayer * speed * Time.deltaTime;
                 // play with forces, didn't work, penguin just bounced back and forth
                 //Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
                 //Vector2 vector = new Vector2(vector3.x * my_speed, vector3.y * my_speed);
@@ -64,6 +73,19 @@ public class Fluffy : MonoBehaviour {
         }
 		
 	}
+
+    // base speed on distance from penguin, three areas at either half, full, or double speed
+    private float CalculateSpeed()
+    {
+        float speed = my_baseSpeed;
+        float distanceToPenguin = Vector3.Distance(player.transform.position, transform.position);
+        if (distanceToPenguin > baseDistance + 2)
+            speed *= 2f;
+        if (distanceToPenguin < baseDistance)
+            speed /= 2f;
+
+        return speed;
+    }
 
     // add to the list of sharks that fluffy is colliding with, because she won't move near them
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,6 +96,11 @@ public class Fluffy : MonoBehaviour {
             sharkColliders.Add(collision);
             // sharkPosition = collision.transform.position;
         }
+        else if (collision.name == "FluffysGoal")
+        {
+            TriggerGoal();
+        }
+        Debug.Log(collision.name);
     }
 
     // remove sharks from the list when fluffy is no longer colliding with them
@@ -91,5 +118,8 @@ public class Fluffy : MonoBehaviour {
         }
     }
 
-
+    private void TriggerGoal()
+    {
+        Debug.Log("Fluffy TriggerGoal");
+    }
 }
