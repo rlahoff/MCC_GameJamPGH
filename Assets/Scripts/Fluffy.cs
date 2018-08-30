@@ -32,6 +32,8 @@ public class Fluffy : MonoBehaviour {
     public void FollowMe()
     {
         isFollowing = true;
+        // now allow sharks to push away Fluffy
+        GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
     void FixedUpdate () {
@@ -90,31 +92,37 @@ public class Fluffy : MonoBehaviour {
     // add to the list of sharks that fluffy is colliding with, because she won't move near them
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "enemy")
+        if (isFollowing)
         {
-            isScared = true;
-            sharkColliders.Add(collision);
-            // sharkPosition = collision.transform.position;
+            if (collision.tag == "enemy")
+            {
+                isScared = true;
+                sharkColliders.Add(collision);
+                // sharkPosition = collision.transform.position;
+            }
+            else if (collision.name == "FluffysGoal")
+            {
+                TriggerGoal();
+            }
+            Debug.Log(collision.name);
         }
-        else if (collision.name == "FluffysGoal")
-        {
-            TriggerGoal();
-        }
-        Debug.Log(collision.name);
     }
 
     // remove sharks from the list when fluffy is no longer colliding with them
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "enemy")
+        if (isFollowing)
         {
-            for (int i = 0; i < sharkColliders.Count; i++)
-                if (sharkColliders[i] == collision)
-                {
-                    sharkColliders.RemoveAt(i);
-                }
-            if (sharkColliders.Count == 0)
-                isScared = false; 
+            if (collision.tag == "enemy")
+            {
+                for (int i = 0; i < sharkColliders.Count; i++)
+                    if (sharkColliders[i] == collision)
+                    {
+                        sharkColliders.RemoveAt(i);
+                    }
+                if (sharkColliders.Count == 0)
+                    isScared = false;
+            }
         }
     }
 

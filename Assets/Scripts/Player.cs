@@ -244,7 +244,8 @@ public class Player : MonoBehaviour {
 
     }
 
-    private static void ProcessDebugInput()
+    // cheat keys for debug only
+    private void ProcessDebugInput()
     {
         if (Input.GetKey(KeyCode.N))
         {
@@ -256,6 +257,12 @@ public class Player : MonoBehaviour {
                 levelManager.LoadNextLevel();
             }
         }
+        if (Input.GetKey(KeyCode.Y))
+            TriggerSnowflake(COLOR.Yellow);
+        if (Input.GetKey(KeyCode.G))
+            TriggerSnowflake(COLOR.Green);
+        if (Input.GetKey(KeyCode.B))
+            TriggerSnowflake(COLOR.Blue);
     }
 
     private void MovePlayer(bool moveRight, bool moveLeft, bool moveUp, bool moveDown)
@@ -513,13 +520,16 @@ public class Player : MonoBehaviour {
         switch (my_Color)
         {
             case COLOR.Yellow:
-                animator.SetTrigger("YellowSwim");
+                               animator.SetTrigger("YellowSwim");
+                //animator.Play("Swim");
                 break;
             case COLOR.Green:
-                animator.SetTrigger("GreenSwim");
+                               animator.SetTrigger("GreenSwim");
+                //animator.Play("Green_Swim");
                 break;
             case COLOR.Blue:
-                animator.SetTrigger("BlueSwim");
+                               animator.SetTrigger("BlueSwim");
+                //animator.Play("Blue_Swim");
                 break;
             default:
                 Debug.LogWarning("Missing Penguin animation state or handling " + my_Color + "in this swtich statement");

@@ -45,10 +45,14 @@ public class Shark : MonoBehaviour {
 
     public void HitByColorRay(COLOR color)
     {
-        if (Snowflake.IsColorComplementary(color, my_comp_color))
-            ChangeColorState();
-        else
-            Mock();
+        // ignore if I'm friendly
+        if (gameObject.layer != FRIENDLY_LAYER)
+        {
+            if (Snowflake.IsColorComplementary(color, my_comp_color))
+                ChangeColorState();
+            else
+                Mock();
+        }
     }
 
     private void ChangeColorState()
@@ -109,7 +113,7 @@ public class Shark : MonoBehaviour {
 
     void Mock()
     {
-        Debug.Log("Mock");
+        //Debug.Log("Mock");
         Animator animator = GetComponent<Animator>();
         if (animator)
             animator.Play("Mock");
