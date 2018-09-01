@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198573268995334550}
   - component: {fileID: 199228513218614024}
   m_Layer: 0
-  m_Name: HitColorRayNotUsed
+  m_Name: HitColorRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
