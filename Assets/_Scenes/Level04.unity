@@ -5727,7 +5727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959355588}
   m_Layer: 0
-  m_Name: Hole stuffers
+  m_Name: BlockPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
