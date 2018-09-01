@@ -1,4 +1,4 @@
-# MCC_GameJamPGH
+﻿# MCC_GameJamPGH
 Moms Can Code Game Jam Pittsburgh game
 
 # Play
@@ -23,10 +23,12 @@ In order to contribute, you need to clone the repo and have Unity installed.
 **It is extremely important to build levels out of prefabs.**
 
 The only items that will not be prefabs-
-	* Your background
-	* The Canvas
+  * Your background
+  * The Canvas
   * The EventSystem (created when you create the Canvas to hold the user interface)
   * BlockPlayer (see Level 4 or SharkFest - invisible colliders you create to make sure the player doesn’t pass through loosely spaced blocks
+
+Give your level a memorable, but short, name (e.g. Sharkfest or Nightcross). It will be displayed on the level choice screen (once we make that), as well as how we reference it in team discussions or bug fixes.  We're moving away from the too-hard-to-remember Level## (these will eventually be changed).
 
 ### Submitting a level
 When a level is completed- (make sure there are no console warning or error messages)

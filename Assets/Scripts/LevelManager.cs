@@ -8,11 +8,11 @@ public class LevelManager : MonoBehaviour
 {
     // these two should match
     string[] levelNames = 
-                  { "Splash", "Start", "Tutorial", "Intermission", "Adventure", "You shall not pass!", "Shark Tower", "Night",
+                  { "Splash", "Start", "Tutorial", "Intermission", "Adventure", "You shall not pass!", "Shark Tower", "NightCross",
 
                     "Icebergs", "Sharkfest", "Final Challenge", "Final", "Options", "Z Test", "Z Test Transition" };
     public
-    enum LEVELS   { SPLASH, START, TUTORIAL0, INTERMISSION, ADVENTURE1, NOTPASS2, TOWER3, NIGHT4, 
+    enum LEVELS   { SPLASH, START, TUTORIAL0, INTERMISSION, ADVENTURE1, NOTPASS2, TOWER3, NIGHTCROSS4, 
 
                      ICEBERGS10, SHARKFEST11, FINAL12, SCORE, OPTIONS, TEST, TEST2 };
 
